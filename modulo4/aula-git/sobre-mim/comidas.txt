@@ -1,0 +1,10 @@
+1-Arroz
+2-Bife
+3-Lasanha
+4-Açai
+5-Sorvete
+6-Cupim
+7-Hamburguer 
+8-Batata Frita
+9-Suco de laranja
+10-Costela
