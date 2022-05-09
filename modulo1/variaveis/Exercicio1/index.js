@@ -72,6 +72,4 @@ let num2 = prompt("Digite mais um número")
 let totalSoma = Number(num1) + Number(num2) 
 let totalMulti = num1 * num2
 console.log ("O primeiro número somado ao segundo número resulta em:", totalSoma)
-console.log ("O primeiro número multiplicado pelo segundo número resulta em:", totalMulti)
-
-
+console.log ("O primeiro número multiplicado pelo segundo número resulta em:", totalMulti)*/
