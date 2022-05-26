@@ -33,6 +33,10 @@ div>p:first-child {
     display: block;
 }
 
+.frase{
+    margin-top: 100px;
+}
+
 div img {
     background: black;
 }
@@ -65,7 +69,10 @@ div img {
   *  ESTILOS HOME 
   *
   **/
-
+#container-de-descricao {
+    background-color: #2274a5;
+    color: white;
+}
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
@@ -73,6 +80,7 @@ div img {
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+    margin-top: 100px;
 }
 
 #container-para-comprar {
