@@ -33,10 +33,6 @@ div>p:first-child {
     display: block;
 }
 
-.frase{
-    margin-top: 100px;
-}
-
 div img {
     background: black;
 }
@@ -80,7 +76,6 @@ div img {
 
 #container-de-descricao>ol {
     padding: 15px 0px;
-    margin-top: 100px;
 }
 
 #container-para-comprar {
@@ -107,6 +102,7 @@ div:last-child {
 
 table {
     width: 60%;
+    text-align: center;
 }
 
 td button {
