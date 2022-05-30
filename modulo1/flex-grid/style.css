@@ -55,3 +55,24 @@ ul, li, a{
     height: 20px;
     text-align: left;
 }
+#arrow-1{
+    width: 20px;
+    height: 20px;
+    display: flex;
+}
+main{
+    flex-direction:row;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+main > div > img{
+    width: 200px;
+    height: 230px;
+    margin: 70px;
+}
+main h2,p{
+    text-align: center;
+    margin-top: 15px;
+}
+
