@@ -1,0 +1,21 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+header{
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 25px 0 25px;
+    height: 50px;
+}
+#image-cake{
+    width: 20px;
+}
+nav{
+    background-color: #f2d0e0;
+    display: flex;
+}
+
