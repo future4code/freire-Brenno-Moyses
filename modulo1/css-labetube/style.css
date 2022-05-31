@@ -1,0 +1,24 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+header{
+    background-color: rgb(199, 21, 21);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 25px 0 25px;
+    height: 80px;
+}
+#txtbuscar{
+    width: 70px;
+    padding: 5px;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items:center;
+    grid-row-gap: 20px;
+    padding: 40px;
+}
