@@ -16,27 +16,35 @@ header{
 }
 main{
     display: grid;
-    grid-template-columns: repeat(4,auto);
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(400px, auto));
     justify-content:center;
-    grid-row-gap: 20px;
-    padding: 60px;
+    grid-gap: 15px;
+    padding: 2vh;
+    align-items: center;
 }
 main > div{
     border: 1px solid limegreen;
-    margin: 10px;
 }
 div h2{
     margin: 15px;
 }
-div, video{
-    width: 430px;
+video{
+    max-width: 400px;
 }
 footer{
     background-color: rgb(199, 21, 21);
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     padding: 0 25px 0 25px;
     height: 80px;
 }
+@media (max-width: 600px){
+    main{
+        grid-template-columns: repeat(auto-fill, minmax(90vw, auto));
+    }
+    video{
+        max-width: 90vw;
+    }
+}
+
