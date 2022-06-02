@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+.header{
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: rgb(228, 67, 67);
+    position:fixed;
+    top:0;
+}
+.header > img{
+    position: absolute;
+    left: 110px;
+    width: 90px;
+    height: 100px;
+}
+.logo-name{
+    color: white;
+}
+.menu li{
+    display: inline-block;
+    margin: 0 25px;
+}
+.menu li a{
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+}
+.menu li a:hover{
+    color: black;
+}
+.container h1{
+    text-align: center;
+    font-size: 60px;
+
+}
+.container p{
+    text-align: center;
+    font-size: 35px;
+    margin-top: 15px;
+}
+.header-image img{
+    margin: 80px auto;
+    display: block;
+    width: 900px;
+    height: 400px;
+}
+#home{
+    margin-top: 15vh;
+}
+#about h1{
+    font-size: 60px;
+    text-align: center;
+    margin-top: 5vh;
+}
+#about p{
+    font-size: 30px;
+    text-align: center;
+}
+.about-image{
+    text-align: center;
+    margin-top: 40px;
+}
+#ability{
+    margin-top: 5vh;
+}
+#ability h1{
+    font-size: 60px;
+    text-align: center;
+}
+#ability img{
+    margin-top: 4%;
+    width: 400px;
+    height: 400px;
+}
+#ability p{
+    font-size: 30px;
+}
+#portfolio{
+    margin-top: 5vh;
+}
+#portfolio img{
+    width: 512px;
+    height: 512px;
+    margin-top: 70px;
+}
+#portfolio p{
+    text-align: center;
+    color: rgb(228, 67, 67);
+}
+.project-1{
+    text-align: center;
+}
+.form-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+input[type=text], textarea {
+    display: block;
+    padding: 20px 120px 20px 120px;
+    border: 1px solid rgb(228, 67, 67);
+    font-size: 20px;
+
+}
+.button-submit {
+    display: block;
+    text-align: center;
+}
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 50px 10px 50px;
+    background-color: rgb(228, 67, 67);
+    color: white;
+    border: none;
+    text-decoration: none;
+    cursor: pointer
+}
+#contacts h1{
+    margin-top: 5vh;
+}
+.social-links{
+    text-align: center;
+}
+.social-links img{
+    width: 50px;
+    height: 50px;
+    margin: 20px 10px 20px 10px;
+}
