@@ -6,6 +6,7 @@ import CardPequeno from './components/CardPequeno/CardPequeno';
 import EmailPhoto from './img/email.png';
 import LocalizationPhoto from './img/localization.png';
 
+
 function App() {
   return (
     <div className="App">

@@ -1,12 +1,15 @@
 import React from 'react';
-import './ImagemButton.css'
+// import './ImagemButton.css'
+import {StyledImagemButton} from './Style3'
 
 function ImagemButton(props) {
     return (
-        <div className="image-button-container">
-            <img src={ props.imagem }/>
-            <p>{ props.texto }</p>
-        </div>
+        <StyledImagemButton>
+            <div className='image-button-container'>
+                <img src={ props.imagem }/>
+                <p>{ props.texto }</p>
+            </div>
+        </StyledImagemButton>
 
     )
 }
