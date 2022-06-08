@@ -1,5 +1,4 @@
 import React from 'react';
-// import './CardPequeno.css'
 import {StyledLittleCard} from './Style2'
 
 function CardPequeno(props){

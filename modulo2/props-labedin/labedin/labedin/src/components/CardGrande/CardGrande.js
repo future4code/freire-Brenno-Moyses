@@ -1,5 +1,4 @@
 import React from 'react';
-// import './CardGrande.css'
 import {StyledCard} from './Style'
 
 function CardGrande(props) {
