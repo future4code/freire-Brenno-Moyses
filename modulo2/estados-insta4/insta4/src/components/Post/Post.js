@@ -49,7 +49,12 @@ class Post extends React.Component {
   }
 
   onClickCurtida = () => {
-    console.log('Curtiu!')
+    const currentValue = this.state.numeroCurtidas
+    const nextValue = currentValue+1
+    this.setState({numeroCurtidas: nextValue})
+    if (nextValue > 1){
+      this.setState({numeroCurtidas: this.setState.numeroCurtidas = 0})
+    }
   }
 
   onClickComentario = () => {
@@ -68,7 +73,7 @@ class Post extends React.Component {
   render() {
     let iconeCurtida
 
-    if(this.state.curtido) {
+    if(this.state.numeroCurtidas >=1) {
       iconeCurtida = iconeCoracaoPreto
     } else {
       iconeCurtida = iconeCoracaoBranco
