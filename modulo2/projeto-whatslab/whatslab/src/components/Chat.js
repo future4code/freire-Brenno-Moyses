@@ -46,15 +46,63 @@ const SendButton = styled.button`
     background-color: transparent;
     border: none;
 `
+const List = styled.section`
+    display: block;
+    background-color:gray;
+    font-size: 20px;
+    color: white;
+`
 
 export default class Chat extends Component{
+    state = {
+        chat: [
+            {
+            user: "",
+            message: "" 
+            } 
+        ],   
+        
+        valueInputUser: "",
+        valueInputMessage:""
+        };
+
+    addUser = () => {
+        const newUser = {
+            user: this.state.valueInputUser,
+            message: this.state.valueInputMessage
+        };
+
+        const newPerson = [...this.state.chat, newUser];
+        this.setState({chat: newPerson});
+    };
+
+    onChangeInputUser = (event) => {
+        this.setState({valueInputUser: event.target.value});
+    };
+
+    onChangeInputMessage = (event) => {
+        this.setState({valueInputMessage: event.target.value});
+    };
+    
     render() {
+        const messageList = this.state.chat.map((person,index) => {
+            return (
+                <div key={index}>
+                    <List>
+                        {person.user} {person.message}
+                    </List>
+                </div>
+            );
+        });
         return(
             <ChatContainer>
-                <UserInputName placeholder="Nome"></UserInputName>
-                <UserInputMessage placeholder="Mensagem"></UserInputMessage>
-                <SendButton type="button"><img src="https://cdn-icons-png.flaticon.com/512/2983/2983788.png" height="45" width="50"/></SendButton>
+                <UserInputName value={this.state.valueInputUser} onChange={this.onChangeInputUser} placeholder="Nome"></UserInputName>
+                <UserInputMessage value={this.state.valueInputMessage} onChange={this.onChangeInputMessage}  placeholder="Mensagem"></UserInputMessage>
+                <SendButton onClick={this.addUser} type="button"><img src="https://cdn-icons-png.flaticon.com/512/2983/2983788.png" height="45" width="50"/></SendButton>
+                {messageList}
             </ChatContainer>
         );
     }
 }
+
+
