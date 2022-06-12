@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const ChatContainer = styled.div`
     display: flex;
     justify-content: space-around;
-    flex-direction: columns;
     align-items: flex-end;
 
     border: 2px solid black;
@@ -12,14 +11,10 @@ const ChatContainer = styled.div`
     height: 100vh;
     margin: 0 auto;
     background-image: url(https://i.pinimg.com/originals/35/f3/e9/35f3e9c4b86568b4919949a9307da2a9.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
 `
 const UserInputName = styled.input`
     width: 200px;
     height: 30px;
-    justify-content: center;
     font-size: 20px;
     border-radius: 20px 20px;
     padding: 5px 10px;
@@ -46,11 +41,21 @@ const SendButton = styled.button`
     background-color: transparent;
     border: none;
 `
-const List = styled.section`
+const Message = styled.div`
     display: block;
-    background-color:gray;
+    background-color:#DDF7C8;
     font-size: 20px;
-    color: white;
+    color: black;
+    position: absolute;
+    align-self: flex-start;
+    margin: 50px;
+    margin-right: 700px;
+    border-radius: 100px;
+    max-width: 60%;
+    min-width: 8%;
+    margin-bottom: 1em;
+    word-wrap: break-word;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
 `
 
 export default class Chat extends Component{
@@ -74,6 +79,7 @@ export default class Chat extends Component{
 
         const newPerson = [...this.state.chat, newUser];
         this.setState({chat: newPerson});
+        this.setState({ valueInputMessage: "" });
     };
 
     onChangeInputUser = (event) => {
@@ -88,9 +94,7 @@ export default class Chat extends Component{
         const messageList = this.state.chat.map((person,index) => {
             return (
                 <div key={index}>
-                    <List>
                         {person.user} {person.message}
-                    </List>
                 </div>
             );
         });
@@ -99,7 +103,9 @@ export default class Chat extends Component{
                 <UserInputName value={this.state.valueInputUser} onChange={this.onChangeInputUser} placeholder="Nome"></UserInputName>
                 <UserInputMessage value={this.state.valueInputMessage} onChange={this.onChangeInputMessage}  placeholder="Mensagem"></UserInputMessage>
                 <SendButton onClick={this.addUser} type="button"><img src="https://cdn-icons-png.flaticon.com/512/2983/2983788.png" height="45" width="50"/></SendButton>
-                {messageList}
+                <Message>
+                {messageList} 
+                </Message>
             </ChatContainer>
         );
     }
