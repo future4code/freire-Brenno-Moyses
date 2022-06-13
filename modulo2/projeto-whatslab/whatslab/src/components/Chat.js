@@ -60,13 +60,7 @@ const Message = styled.div`
 
 export default class Chat extends Component{
     state = {
-        chat: [
-            {
-            user: "",
-            message: "" 
-            } 
-        ],   
-        
+        chat: [],   
         valueInputUser: "",
         valueInputMessage:""
         };
@@ -94,7 +88,7 @@ export default class Chat extends Component{
         const messageList = this.state.chat.map((person,index) => {
             return (
                 <div key={index}>
-                        {person.user} {person.message}
+                        {person.user}: {person.message}
                 </div>
             );
         });
