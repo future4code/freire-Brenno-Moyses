@@ -1,11 +1,11 @@
 import React from "react";
 import styled from 'styled-components'
 
-const FormContainer = styled.div`
+export const FormContainer = styled.div`
     display: flex;
     justify-content: center;
 `
-const Form = styled.form`
+export const Form = styled.form`
     text-align: center;
     
     input{
@@ -46,8 +46,6 @@ export default class Stage1 extends React.Component{
                         <option value="Ensino superior incompleto" >Ensino superior incompleto</option>
                         <option value="Ensino superio completo" >Ensino superior completo</option>
                     </select>
-                    
-                    <div><button name="button">Próxima etapa</button></div>
                     </Form>
         </FormContainer>   
         );
