@@ -10,12 +10,39 @@ const TarefaList = styled.ul`
 const Tarefa = styled.li`
   text-align: left;
   text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
+  font-size: 30px;
+  margin: 20px;
 `
 
 const InputsContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
   gap: 10px;
+
+  input{
+    border-radius: 10px;
+    font-size: 30px;
+    border: solid;
+  }
+  button{
+    border-radius: 10px;
+    font-size: 20px;
+    border: solid;
+  }
+  button:hover{
+    background-color:gray;
+    color: white;
+    border: solid black;
+  }
+  select{
+    border-radius: 10px;
+    font-size: 25px;
+    border: solid;
+  }
+  label{
+    font-size: 25px;
+  }
+
 `
 
 class App extends React.Component {
@@ -90,7 +117,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>Lista de tarefas</h1>
+        <h1>LISTA DE TAREFAS</h1>
         <InputsContainer>
           <input value={this.state.inputValue} onChange={this.onChangeInput}/>
           <button onClick={this.criaTarefa}>Adicionar</button>
