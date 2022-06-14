@@ -82,6 +82,7 @@ class App extends React.Component {
     const newTaskList = [...this.state.tarefas, newTask]
 
     this.setState({tarefas: newTaskList})
+    this.setState({inputValue: ""})
   }
 
   selectTarefa = (id) => {
