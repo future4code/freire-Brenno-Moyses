@@ -1,0 +1,10 @@
+1- Maracarrão
+2-Bife
+3-Hamburguer 
+4-Lasanha
+5-Açai
+6-Bata Frita
+7-Sorvete
+8-Crepe
+9-Arroz
+10-Salmão

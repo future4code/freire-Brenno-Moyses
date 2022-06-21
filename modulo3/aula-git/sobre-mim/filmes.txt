@@ -1,0 +1,10 @@
+1-Vingadores
+2-Homem Aranha
+3-Thor
+4-Capitão América
+5-Superbad
+6-Fim do Mundo
+7-Django
+8-Corra
+9-Pulp Fiction
+10-Senhor dos Anéis

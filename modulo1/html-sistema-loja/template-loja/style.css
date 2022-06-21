@@ -1,0 +1,32 @@
+header{
+    background-color: black;
+    text-align: center;
+}
+h1, p{
+    color: rgb(253, 9, 9);
+    
+}
+nav{
+    text-align: center;
+}
+section{
+    text-align: center;
+}
+table{
+    width: 100%;
+    color: white;
+}
+tr{
+    background-color: dimgray;
+    text-align: center;
+}
+input{
+    margin: 1vh;
+}
+.nome-funcionarios{
+    text-align: center;
+}
+footer{
+    text-align: center;
+    margin-top: 20vh;
+}

@@ -1,0 +1,50 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+header{
+    background-color: rgb(199, 21, 21);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 25px 0 25px;
+    height: 80px;
+}
+#txtbuscar{
+    width: 70px;
+    padding: 5px;
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+    justify-content:center;
+    grid-gap: 15px;
+    padding: 2vh;
+    align-items: center;
+}
+main > div{
+    border: 1px solid limegreen;
+}
+div h2{
+    margin: 15px;
+}
+video{
+    max-width: 400px;
+}
+footer{
+    background-color: rgb(199, 21, 21);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0 25px 0 25px;
+    height: 80px;
+}
+@media (max-width: 600px){
+    main{
+        grid-template-columns: repeat(auto-fill, minmax(90vw, auto));
+    }
+    video{
+        max-width: 90vw;
+    }
+}
+
