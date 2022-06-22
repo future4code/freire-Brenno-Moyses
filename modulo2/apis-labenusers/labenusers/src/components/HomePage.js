@@ -9,9 +9,9 @@ export default class HomePage extends Component {
         <div>
             <button>Trocar de tela</button>
             <div>
-                <input placeholder='Nome'></input>
-                <input placeholder='E-mail'></input>
-                <button>Criar usuário</button>
+                <input onChange={this.props.onChangeInputUser} placeholder='Nome'></input>
+                <input onChange={this.props.onChangeInputEmail} placeholder='E-mail'></input>
+                <button onClick={this.props.AddUser}>Criar usuário</button>
             </div>
         </div>
     )
