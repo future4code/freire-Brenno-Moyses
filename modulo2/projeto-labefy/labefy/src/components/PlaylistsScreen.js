@@ -29,8 +29,8 @@ const CardsContainer = styled.div`
     h1{
         color: orange;
     }
-
-    button{
+`
+const ButtonCreate = styled.button`
         margin: 20px 0;
         padding: 8px;
         border-radius: 20px;
@@ -40,8 +40,8 @@ const CardsContainer = styled.div`
         background-color: orange;
         color: black;
         border: none;
-    }
-    button:hover{
+    
+    :hover{
         cursor: pointer;
         filter: brightness(1.2);
     }
@@ -53,13 +53,24 @@ const CardPlaylist = styled.div`
     margin: 10px;
     width: 300px;
     font-weight: bold;
+    color: orange;
     display: flex;
     justify-content: space-between;
-    color: orange;
-`
+    align-items: center;
+    border-radius: 7px;
+    
 
-const DeleteButton = styled.button`
-    background-color: rebeccapurple;
+    button{
+        padding: 5px;
+        background: none;
+        border: none;  
+        transition: filter 0.10s; 
+    }
+    button:hover{
+        cursor: pointer;
+        filter: brightness(1.3);
+    }
+
 `
 export default class PlaylistsScreen extends React.Component{
 
@@ -85,19 +96,34 @@ export default class PlaylistsScreen extends React.Component{
             alert("Ocorreu um problema!")
         })
     }
+
+    PlaylistDelete = (Id) => {
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${Id}`
+        axios.delete(url, {
+            headers:{
+                Authorization: "brenno-freire-labenu"
+            }     
+        })  .then((res) => {
+            alert("Playlist deletada com sucesso!")
+            this.getPlaylists()
+        })
+            .catch((err) =>{
+                alert("Ocorreu um erro!")
+            })
+    }
     
     render () {
         const playlistList = this.state.playlists.map((playlist) => {
             return <CardPlaylist key={playlist.id}>
                 {playlist.name}
-                <DeleteButton>X</DeleteButton>
+                <button onClick={() =>this.PlaylistDelete(playlist.id)}><img src="https://cdn-icons.flaticon.com/png/512/3405/premium/3405234.png?token=exp=1656105553~hmac=a062215a1f8df09b652e5a619c63a6c3" height ="22" width="22"></img></button>
                 </CardPlaylist>
         })
         return (
             <ListContainer>
                 <GlobalStyle/>
                 <CardsContainer>
-                    <button onClick={this.props.goToCreatePlaylist}>Crie sua playlist</button>
+                    <ButtonCreate onClick={this.props.goToCreatePlaylist}>Crie sua playlist</ButtonCreate>
                     <h1>Playlists</h1>
                     {playlistList}
                 </CardsContainer>

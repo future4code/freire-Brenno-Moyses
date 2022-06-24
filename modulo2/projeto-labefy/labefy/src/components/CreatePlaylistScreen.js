@@ -47,6 +47,7 @@ const ItensContainer = styled.div`
     width: 40%;
     height: 35vh;
     text-align: center;
+    border-radius: 7px;
 
     h1{
         color: orange;
