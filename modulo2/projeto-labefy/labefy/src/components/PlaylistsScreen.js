@@ -1,7 +1,6 @@
 import React from "react"
 import axios from "axios"
 import styled, { createGlobalStyle } from "styled-components"
-import PlaylistDetails from "./PlaylistDetails"
 
 const GlobalStyle = createGlobalStyle`
     *{
@@ -87,6 +86,8 @@ const CardPlaylist = styled.div`
     }
 
 `
+
+
 export default class PlaylistsScreen extends React.Component{
 
     state = {
@@ -130,13 +131,10 @@ export default class PlaylistsScreen extends React.Component{
     render () {
         const playlistList = this.state.playlists.map((playlist) => {
             return <CardPlaylist key={playlist.id}>
-                {/* <PlaylistDetails 
-                    playlistName={playlist.name} 
-                    goToDetails ={this.props.goToDetails}
-                /> */}
                 <ButtonDetails onClick={this.props.goToDetails}>{playlist.name}</ButtonDetails>
-                <button onClick={() =>this.PlaylistDelete(playlist.id)}><img src="https://cdn-icons.flaticon.com/png/512/3405/premium/3405234.png?token=exp=1656105553~hmac=a062215a1f8df09b652e5a619c63a6c3" height ="22" width="22"></img></button>
+                <button onClick={() =>this.PlaylistDelete(playlist.id)}><img src="https://cdn-icons-png.flaticon.com/512/7790/7790291.png" height ="22" width="22"></img></button>
                 </CardPlaylist>
+                
         })
         return (
             <ListContainer>
@@ -147,6 +145,7 @@ export default class PlaylistsScreen extends React.Component{
                     {playlistList}
                 </CardsContainer>
             </ListContainer>
+            
         )
     }
 }

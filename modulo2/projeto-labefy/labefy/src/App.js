@@ -7,7 +7,7 @@ import PlaylistDetails from "./components/PlaylistDetails";
 export default class App extends React .Component {
   
   state = {
-    currentScreen: "create-playlist"
+    currentScreen: "create-playlist",
   }
 
   ChooseScreen = () => {
@@ -17,9 +17,7 @@ export default class App extends React .Component {
       case "playlists":
         return <PlaylistsScreen goToDetails={this.goToDetails} goToCreatePlaylist={this.goToCreatePlaylist}/>
       case "playlist-details":
-        return <PlaylistDetails goToDetails={this.goToDetails}/>
-      // case "playlist-details":
-      //   return <PlaylistsScreen goToDetails={this.goToDetails}/>
+        return <PlaylistDetails goToPlaylists={this.goToPlaylists} goToDetails={this.goToDetails}/>
       default:
         return <div>Erro! Página não encontrada.</div>
     }
