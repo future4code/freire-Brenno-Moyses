@@ -86,6 +86,22 @@ const AddButton = styled.button`
     filter: brightness(1.2);
 }
 `
+const PlaylistMusicsButton = styled.button`
+        color: white;
+        background-color: orange;
+        padding: 5px;
+        border: none;
+        color: black;
+        border-radius: 15px;
+        font-size: 18px;
+        transition: filter 0.20s;
+        margin: 15px;
+
+        :hover{
+        cursor: pointer;
+        filter: brightness(1.2);
+}
+`
 
 
 
@@ -109,6 +125,19 @@ export default class PlaylistDetails extends React.Component{
         this.setState({urlLink: event.target.value})
     }
 
+    GetPlaylistTracks = () => {
+        const url = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
+        axios.get(url,{
+            headers: {
+                Authorization: "brenno-freire-labenu"
+            }
+        })  .then((res) =>{
+            console.log(res)
+        })
+            .catch((err) =>{
+                console.log(err)
+            })
+    }
 
 
     AddMusic = (Id) => {
@@ -136,7 +165,7 @@ export default class PlaylistDetails extends React.Component{
             
             <DetailsContainer>
                 <GlobalStyle/>
-                <PlaylistsButton onClick={this.props.goToPlaylists}>Suas playlists</PlaylistsButton>
+                <PlaylistsButton onClick={this.props.goToPlaylists}>Voltar para suas playlists</PlaylistsButton>
                 <h1>Adicionar Música</h1>
                 <Menu>
                     <label>Música:</label>
@@ -158,7 +187,8 @@ export default class PlaylistDetails extends React.Component{
                     onChange={this.theUrlLink}
                     />
                     <AddButton onClick={()=>this.AddMusic(this.props.playlist.Id)}>Confirmar</AddButton>
-                </Menu>  
+                </Menu> 
+                <PlaylistMusicsButton onClick={() =>this.GetPlaylistTracks(this.props.playlist)}>Mostrar músicas</PlaylistMusicsButton> 
             </DetailsContainer>
         ) 
     }
