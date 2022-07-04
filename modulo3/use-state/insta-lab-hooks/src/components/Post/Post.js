@@ -9,16 +9,42 @@ import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 
 const Post = (props) => {
-
+  const [curtido, setCurtido] = useState(false)
+  const [numeroDeCurtidas, setNumeroDeCurtidas] = useState(0)
+  const [comentando, setComentando] = useState(false)
+  const [numeroDeComentarios, setNumeroDeComentarios] = useState(false)
+  const [comentarios, setComentarios] = useState ([])
 
   const onClickCurtida = () => {
+    if(curtido) {
+      setNumeroDeCurtidas(numeroDeCurtidas -1)
+    } else {
+      setNumeroDeCurtidas(numeroDeCurtidas +1)
+    }
+      setCurtido(!curtido)
   };
 
   const onClickComentario = () => {
+    setComentando(!comentando)
   };
 
-  const enviarComentario = (comentario) => {
+    const enviarComentario = (comentario) => {
+    const Comentarios = [...comentarios, comentario]
+
+    setComentando(false)
+    setComentarios(Comentarios)
+    setNumeroDeComentarios(numeroDeComentarios +1)
   }
+
+  const IconeCurtida = curtido?iconeCoracaoPreto:iconeCoracaoBranco
+
+  const caixaDeComentario = comentando?(<SecaoComentario enviarComentario={enviarComentario}/>
+  ):(
+    comentarios.map((comentario => {
+      return <p>{comentario}</p>
+    }))
+  )
+
 
   return (
     <PostContainer>
@@ -31,18 +57,18 @@ const Post = (props) => {
 
       <PostFooter>
         <IconeComContador
-          // icone={iconeCurtida}
+          icone={IconeCurtida}
           onClickIcone={onClickCurtida}
-          // valorContador={numeroCurtidas}
+          valorContador={numeroDeCurtidas}
         />
 
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={onClickComentario}
-          // valorContador={numeroComentarios}
+          valorContador={numeroDeComentarios}
         />
       </PostFooter>
-      {/* {caixaDeComentario} */}
+      {caixaDeComentario}
     </PostContainer>
   )
 }
