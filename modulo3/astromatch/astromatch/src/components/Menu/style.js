@@ -7,9 +7,9 @@ export const AppContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid black;
+    border: 3px solid #b7656b;
     border-radius: 10px;
-    background-color: white;
+    background-color: #ecdde6;
     box-shadow: rgb(0 0 0 / 6%) 0px 0px 5px;
 `
 
@@ -63,12 +63,22 @@ export const MenuBar = styled.div`
 `
 
 export const Profile = styled.div`
+    height: 40%;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    `
+    
+export const Picture = styled.div`
     width: 100% ;
     text-align: center;
     margin-top: 30px;
-    
+
     img{
-    width:350px;
+        width:350px;
     height: 390px;
     border-radius: 5px;
     box-shadow: rgb(117 117 117 / 77%) 0px 2px 10px 0px;
