@@ -48,7 +48,7 @@ export const MenuBar = styled.div`
     flex-shrink: 0;
 
     h1{
-        color:  #f74354;
+        color:  #b7656b;
         margin: 0 auto;
     }
 
@@ -70,6 +70,11 @@ export const Profile = styled.div`
     color: white;
     display: flex;
     flex-direction: column;
+    word-wrap: break-word;
+    text-align: left;
+    left: 8%;
+    top: 300px;
+    font-size: 15px;
     `
     
 export const Picture = styled.div`
@@ -78,7 +83,7 @@ export const Picture = styled.div`
     margin-top: 30px;
 
     img{
-        width:350px;
+    width:350px;
     height: 390px;
     border-radius: 5px;
     box-shadow: rgb(117 117 117 / 77%) 0px 2px 10px 0px;

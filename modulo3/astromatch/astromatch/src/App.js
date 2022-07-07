@@ -10,17 +10,6 @@ import ProfilesList from './components/ProfilesList/ProfilesList';
 function App() {
   const [currentPage, setCurrentPage] = useState("menu")
 
-  const ChoosePage = () => {
-    switch (currentPage){
-      case "menu":
-        return <Menu/>
-      case "list":
-        return <ProfilesList/>
-      default:
-        return <h1>Erro! Página não encontrada</h1>
-    }
-  }
-
   const goToMenu = () => {
     setCurrentPage("menu")
   }
@@ -29,10 +18,23 @@ function App() {
     setCurrentPage("list")
   }
 
+  const ChoosePage = () => {
+    switch (currentPage){
+      case "menu":
+        return <Menu goToList = {goToList}/>
+      case "list":
+        return <ProfilesList goToMenu = {goToMenu}/>
+      default:
+        return <h1>Erro! Página não encontrada</h1>
+    }
+  }
+
+
+
   return (
     <div>
       <GlobalStyle/>
-      <Menu/>
+      {ChoosePage()}
     </div>
   );
 }
