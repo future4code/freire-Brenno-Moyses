@@ -16,7 +16,7 @@ import Clean from '../../img/limpar.png'
 function Menu(props) {
 
     const [ProfilesList, setProfilesList] = useState([]);
-    const [MatcheList, setMatcheList] = useState([]);
+    const [MatcheProfile, setMatcheProfile] = useState([]);
 
     useEffect(() =>{
         axios
@@ -28,20 +28,21 @@ function Menu(props) {
             .catch((err) =>{
                 console.log(err)
             })
-    },[])
+    },[MatcheProfile])
 
 
-    const body = {
-        id:"",
-        choice: "true" 
-    }
+    const choosePerson = (idProfile, choiceProfile) =>{
 
-    const choosePerson = () =>{
+        const body ={
+            "id": idProfile,
+            "choice": choiceProfile
+        }
+
         axios
-        .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/choose-person", body)
+        .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/brenno-boechat/choose-person", body)
         .then((res)=>{
             console.log(res)
-            setMatcheList(res)
+            setMatcheProfile(res.data)
         })
         .catch((err)=>{
             console.log(err)
@@ -60,13 +61,12 @@ function Menu(props) {
                 <img src={ProfilesList.photo}/>
             </Picture>
         <Profile>
-            <h1>{ProfilesList.name}</h1>
-            <p>{ProfilesList.age}</p>
+            <h2>{ProfilesList.name}, {ProfilesList.age}</h2>
             <p>{ProfilesList.bio}</p>
         </Profile>
             <Buttons>
-                <button> <img src={Reject} height ="35" width="35"></img></button>
-                <button> <img src={Hart} height ="40" width="40"></img></button>
+                <button onClick={()=>choosePerson(ProfilesList.id, false)}> <img src={Reject} height ="35" width="35"></img></button>
+                <button onClick={()=>choosePerson(ProfilesList.id, true)}> <img src={Hart} height ="40" width="40"></img></button>
             </Buttons>
     </Elements>
     </AppContainer>

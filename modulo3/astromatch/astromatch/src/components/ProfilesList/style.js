@@ -8,7 +8,7 @@ export const ListContainer = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     border: 3px solid #b7656b;
-    border-radius: 10px;
+    border-radius: 25px;
     background-color: #ecdde6;
     box-shadow: rgb(0 0 0 / 6%) 0px 0px 5px;
 `
@@ -27,11 +27,16 @@ export const ListMenuBar = styled.div`
 
     h1{
         color:  #b7656b;
-        margin: 0 auto; 
+        margin: 0 auto;
+        margin-right: 100px;
+        font-size: 32px;
     }
 
     button{
         background: none;
         border: none;
-    }
-`
+
+        :hover{
+            cursor:pointer;
+        }
+    }`
