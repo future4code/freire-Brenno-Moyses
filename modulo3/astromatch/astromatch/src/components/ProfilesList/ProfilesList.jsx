@@ -23,12 +23,26 @@ function ProfilesList(props) {
     })
   },[])
 
+  const Filter = MatcheList.map((profile)=>{
+    return (
+      <ul key={profile.id}>
+        <li>
+          <img src={profile.photo}></img>
+          <p>{profile.name}</p>
+        </li>
+      </ul>
+    )
+  })
+
+  
+
   return (
     <ListContainer>
         <ListMenuBar>
             <button><img src={Clean}></img></button>
             <button onClick={props.goToMenu}><h1>astromatch</h1></button>
         </ListMenuBar>
+        {Filter}
     </ListContainer>
   )
 }

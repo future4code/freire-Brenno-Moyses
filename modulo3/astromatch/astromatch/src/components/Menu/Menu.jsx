@@ -47,16 +47,32 @@ function Menu(props) {
         .catch((err)=>{
             console.log(err)
         })
-    } 
+    }
+
+    const cleanList = () =>{
+        axios
+        .put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/brenno-boechat/clear")
+        .then((res)=>{
+            console.log(res)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
 
     return (
     <AppContainer>
-        <Elements>
-            <MenuBar>
-            <button><img src={Clean}></img></button>
+        <MenuBar>
+            <button onClick={()=>cleanList()}><img src={Clean}></img></button>
             <h1>astromatch</h1>
             <button onClick={props.goToList}><img src={Couple} height ="35" width="35"></img></button>
-            </MenuBar>
+        </MenuBar>
+        {ProfilesList === null ? (
+            
+            <h1>Nada foi encontrado!</h1>
+        ):(
+            <Elements>
+            
             <Picture>
                 <img src={ProfilesList.photo}/>
             </Picture>
@@ -69,6 +85,9 @@ function Menu(props) {
                 <button onClick={()=>choosePerson(ProfilesList.id, true)}> <img src={Hart} height ="40" width="40"></img></button>
             </Buttons>
     </Elements>
+        )
+    }
+        
     </AppContainer>
     );
 }
