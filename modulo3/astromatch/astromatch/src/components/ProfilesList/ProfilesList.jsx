@@ -2,9 +2,11 @@ import React, {useState, useEffect} from 'react'
 import styled from "styled-components";
 import axios from 'axios'
 
+import { List } from './style';
 import { ListContainer } from './style';
 import { ListMenuBar } from './style';
 import Clean from '../../img/limpar.png'
+import Back from '../../img/voltar.png'
 
 
 function ProfilesList(props) {
@@ -13,9 +15,9 @@ function ProfilesList(props) {
 
   useEffect(()=>{
     axios
-    .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/matches")
+    .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/brenno-boechat/matches")
     .then((res)=>{
-        console.log(res)
+        console.log(res.data.matches)
         setMatcheList(res.data.matches)
     })
     .catch((err)=>{
@@ -25,22 +27,21 @@ function ProfilesList(props) {
 
   const Filter = MatcheList.map((profile)=>{
     return (
-      <ul key={profile.id}>
+      <List key={profile.id}>
         <li>
           <img src={profile.photo}></img>
           <p>{profile.name}</p>
         </li>
-      </ul>
+      </List>
     )
   })
-
-  
 
   return (
     <ListContainer>
         <ListMenuBar>
-            <button><img src={Clean}></img></button>
-            <button onClick={props.goToMenu}><h1>astromatch</h1></button>
+            <button><img src={Clean} height ="35" width="35"></img></button>
+            <h1>astromatch</h1>
+            <button onClick={props.goToMenu}><img src={Back} height ="35" width="35"></img></button>
         </ListMenuBar>
         {Filter}
     </ListContainer>

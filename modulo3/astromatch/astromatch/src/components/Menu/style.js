@@ -7,9 +7,9 @@ export const AppContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid #b7656b;
+    border: 3px solid black;
     border-radius: 25px;
-    background-color: #ecdde6;
+    background-color: white;
     box-shadow: rgb(0 0 0 / 6%) 0px 0px 5px;
 `
 
@@ -31,6 +31,8 @@ export const Buttons = styled.div`
         border: none;
     :hover{
         cursor: pointer;
+        transform: scale(1.2);
+        transition: all 0.5s;
     }
     }
 `
@@ -58,6 +60,8 @@ export const MenuBar = styled.div`
 
         :hover{
             cursor: pointer;
+            transform: scale(1.1);
+            transition: all 0.5s;
         }
     }
 `
@@ -66,7 +70,7 @@ export const Profile = styled.div`
     /* height: 40%; */
     position: absolute;
     bottom: 100px;
-    width: 100%;
+    width: 88%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -90,7 +94,7 @@ export const Picture = styled.div`
     img{
     width:370px;
     height: 420px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: rgb(117 117 117 / 77%) 0px 2px 10px 0px;
     filter: brightness(70%);
     }

@@ -63,7 +63,7 @@ function Menu(props) {
     return (
     <AppContainer>
         <MenuBar>
-            <button onClick={()=>cleanList()}><img src={Clean}></img></button>
+            <button onClick={()=>cleanList()}><img src={Clean} height ="35" width="35"></img></button>
             <h1>astromatch</h1>
             <button onClick={props.goToList}><img src={Couple} height ="35" width="35"></img></button>
         </MenuBar>
