@@ -7,10 +7,10 @@ export const ListContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid black;
     border-radius: 25px;
     background-color: white;
     box-shadow: rgb(0 0 0 / 6%) 0px 0px 5px;
+    overflow: auto;
 `
 
 export const ListMenuBar = styled.div`
@@ -26,10 +26,8 @@ export const ListMenuBar = styled.div`
     flex-shrink: 0;
 
     h1{
-        color:  #b7656b;
+        color:  black;
         margin: 0 auto;
-        /* margin-right: 100px; */
-        /* font-size: 32px; */
     }
 
     button{
@@ -51,14 +49,15 @@ export const List = styled.ul`
 
     li{
     position: relative;
-    height: 60px;
-    padding: 2px;
+    padding: 5px;
     display: flex;
     list-style: none;
     width: 100%;
     transition: all 0.2s ease 0s;
     cursor: pointer;
-    right: 20px;
+    right: 25px;
+    border-radius: 20px;
+    background-color: #EFEFF4;
     }
     img{
         width: 50px;
@@ -67,5 +66,6 @@ export const List = styled.ul`
     }
     p{
         margin-left: 15px;
+        font: bold;
     }
 `

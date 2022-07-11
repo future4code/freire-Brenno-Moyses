@@ -5,8 +5,8 @@ import axios from 'axios'
 import { List } from './style';
 import { ListContainer } from './style';
 import { ListMenuBar } from './style';
-import Clean from '../../img/limpar.png'
-import Back from '../../img/voltar.png'
+import Clean from '../../img/reload.png'
+import Back from '../../img/volte.png'
 
 
 function ProfilesList(props) {

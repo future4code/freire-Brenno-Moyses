@@ -7,7 +7,6 @@ export const AppContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid black;
     border-radius: 25px;
     background-color: white;
     box-shadow: rgb(0 0 0 / 6%) 0px 0px 5px;
@@ -24,16 +23,25 @@ export const Buttons = styled.div`
     justify-content: space-evenly;
     -webkit-box-align: center;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 30px;
 
     button{
-        background: none;
-        border: none;
+        background: #EFEFF4;
+        border: 2px solid black;
+        border-radius: 50%;
+        padding: 15px;
+
     :hover{
         cursor: pointer;
         transform: scale(1.2);
         transition: all 0.5s;
+;
     }
+    }
+    img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 `
 
@@ -50,7 +58,7 @@ export const MenuBar = styled.div`
     flex-shrink: 0;
 
     h1{
-        color:  #b7656b;
+        color:  black;
         margin: 0 auto;
     }
 
@@ -67,17 +75,16 @@ export const MenuBar = styled.div`
 `
 
 export const Profile = styled.div`
-    /* height: 40%; */
     position: absolute;
     bottom: 100px;
-    width: 88%;
+    width: 85%;
     color: white;
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
     text-align: left;
-    left: 7%;
-    /* top: 380px; */
+    left:8%;
+    top: 352px;
     font-size: 15px;
 
 
@@ -92,8 +99,8 @@ export const Picture = styled.div`
     margin-top: 30px;
 
     img{
-    width:370px;
-    height: 420px;
+    width:350px;
+    height: 380px;
     border-radius: 10px;
     box-shadow: rgb(117 117 117 / 77%) 0px 2px 10px 0px;
     filter: brightness(70%);
