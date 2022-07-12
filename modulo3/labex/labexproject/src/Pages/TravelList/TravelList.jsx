@@ -1,17 +1,23 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import axios from "axios"
+import {useNavigate} from "react-router-dom"
+import { goToHome, goToTravelForm } from '../../coordinator'
 
 import { ListContainer } from './style'
 import { Buttons } from './style'
 import { Card } from './style'
 
-function TravelList(props) {
+function TravelList() {
+
+    const navigate = useNavigate()
+
+
     return (
         <ListContainer>
             <Buttons>
-                <button onClick={props.goToHome}>Voltar</button>
-                <button onClick={props.goToTravelForm}>Inscreva-se</button>
+                <button onClick={()=>goToHome(navigate)}>Voltar</button>
+                <button onClick={()=>goToTravelForm(navigate)}>Inscreva-se</button>
             </Buttons>
             <h1>Lista de Viagens🚀</h1>
             <Card>
