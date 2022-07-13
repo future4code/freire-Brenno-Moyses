@@ -8,6 +8,7 @@ import { useGetTrips } from '../../hooks/useGetTrips'
 import { ListContainer } from './style'
 import { Buttons } from './style'
 import { Card } from './style'
+import { Elements } from './style'
 
 function TravelList() {
 
@@ -26,14 +27,14 @@ function TravelList() {
             return travel.map((trip)=>{
                 console.log(trip.name)
                 return (
-                    <Card>
-                        <div className='teste'>
-                            <p key={trip.id}>Nome: {trip.name}</p>
+                    <Card key={trip.id}>
+                        <Elements>
+                            <p>Nome: {trip.name}</p>
                             <p>Descrição: {trip.description}</p>
                             <p>Planeta: {trip.planet}</p>
                             <p>Duração: {trip.durationInDays}</p>
                             <p>Data: {trip.date}</p>
-                        </div>
+                        </Elements>
                     </Card>
                 )
             });

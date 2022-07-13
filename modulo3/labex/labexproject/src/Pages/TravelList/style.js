@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ListContainer = styled.div`
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     height: 60vh;
     flex-direction: column;
@@ -37,19 +37,27 @@ export const Buttons = styled.div`
     }`
 
 export const Card = styled.div`
-    width: 500px;
-    height: 250px;
-    color: white;
     display: flex;
-    /* flex-direction: column;      */
-    flex-wrap: wrap;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
-    justify-content: center;    
+    width: 550px;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin: 10px;
 
-    border: 2px solid white;
-
-    p{
+    /* p{
         margin: 13px;
         margin-left: 20px;
-    }  
+    }   */
+`
+export const Elements = styled.div`
+    box-shadow: rgb(0 0 0 / 30%) 0px 4px 8px 0px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 10px 0px;
+    max-width: 500px;
+    width: 100%;
 `

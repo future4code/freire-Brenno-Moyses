@@ -11,3 +11,11 @@ export const goToHome = (navigate) => {
 export const goToTravelList = (navigate) => {
     navigate("/travellist")
 }
+
+export const goToLogin = (navigate) => {
+    navigate("/login")
+}
+
+export const goToTravelDetails = (navigate) => {
+    navigate("/traveldetails")
+}

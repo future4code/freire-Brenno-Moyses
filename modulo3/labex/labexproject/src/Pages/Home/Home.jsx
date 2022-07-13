@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
-import { goToTravelList } from '../../coordinator'
+import { goToLogin, goToTravelList } from '../../coordinator'
+import Login from '../login/Login'
 
 import { HomeContainer } from './style'
 import { Elements } from './style'
@@ -17,7 +18,7 @@ function Home() {
                 <h1>LabeX</h1>
                     <Buttons>
                         <button onClick={() => goToTravelList(navigate)}>Ver Viagens</button>
-                        <button>Área de admin</button>
+                        <button onClick={() => goToLogin(navigate)}>Área de admin</button>
                     </Buttons>
     </HomeContainer>
     )
