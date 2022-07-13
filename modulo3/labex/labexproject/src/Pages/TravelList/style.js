@@ -37,20 +37,19 @@ export const Buttons = styled.div`
     }`
 
 export const Card = styled.div`
-    width: 550px;
-    height: 230px;
+    width: 500px;
+    height: 250px;
     color: white;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column;      */
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;    
-    /* fazer wrap */
 
-    border-radius: 10px;
     border: 2px solid white;
-    background: transparent;
 
     p{
         margin: 13px;
         margin-left: 20px;
-    }
+    }  
 `

@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from '../Pages/Home/Home';
-import TravelList from '../Pages/TravelList/TravelList';
-import TravelForm from '../Pages/TravelForm/TravelForm';
+import Home from '../Pages/home/Home';
+import TravelList from '../Pages/travelList/TravelList';
+import TravelForm from '.././Pages/travelForm/TravelForm';
 
 export const Router = () => {
     return (

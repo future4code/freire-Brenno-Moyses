@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components';
 import axios from 'axios';
 import { GlobalStyle } from './Global';
-import { Router } from './Routes/Router';
+import { Router } from './routes/Router';
 
 function App() {
 
