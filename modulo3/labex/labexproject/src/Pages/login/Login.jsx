@@ -16,6 +16,7 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+
     const onChangeEmail = (event) => {
         setEmail(event.target.value)
     }
@@ -24,17 +25,20 @@ function Login() {
         setPassword(event.target.value)
     }
 
-    const onSubmitLogin = () => {
-        console.log(email, password)
+    const onSubmitLogin = (event) => {
+        event.preventDefault()
         const body = {
             email: email,
             password: password
         }
+        console.log(body)
         axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/brenno/login', body)
             .then((res) => {
-                console.log('Deu certo: ', res.data)
+                console.log('Deu certo: ', res.data.token);
+                localStorage.setItem('token', res.data.token)
+                navigate('/adminarea')
             }).catch((err) => {
-                console.log('Deu errado: ', err.data)
+                console.log('Deu errado: ', err.data);
             })
     }
 
@@ -42,6 +46,7 @@ function Login() {
         <LoginContainer>
                     <h1>Login</h1>
                 <LoginElements>
+                    <form onSubmit={onSubmitLogin}>
                         <input  placeholder='E-mail'
                                 onChange={onChangeEmail} 
                                 value={email} 
@@ -51,10 +56,11 @@ function Login() {
                                 onChange={onChangePassword}
                                 value={password}
                                 type="password"></input>
-                    <Buttons>
+                        <Buttons>
                         <button onClick={()=>goToHome(navigate)}>Voltar</button>
-                        <button onClick={onSubmitLogin}>Entrar</button>
+                        <button>Entrar</button>
                     </Buttons>
+                    </form> 
                 </LoginElements>
         </LoginContainer>
     )

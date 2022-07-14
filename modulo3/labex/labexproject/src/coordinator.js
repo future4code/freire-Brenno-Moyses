@@ -5,7 +5,7 @@ export const goToTravelForm = (navigate) => {
 }
 
 export const goToHome = (navigate) => {
-    navigate(-1)
+    navigate("/home")
 }
 
 export const goToTravelList = (navigate) => {
@@ -18,4 +18,12 @@ export const goToLogin = (navigate) => {
 
 export const goToTravelDetails = (navigate) => {
     navigate("/traveldetails")
+}
+
+export const goToAdminArea = (navigate) => {
+    navigate("/adminarea")
+}
+
+export const goToTravelCreation = (navigate) => {
+    navigate("/travelcreation")
 }

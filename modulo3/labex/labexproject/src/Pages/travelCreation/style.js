@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoginContainer = styled.div`
+export const CreationFormContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,34 +8,37 @@ export const LoginContainer = styled.div`
     flex-direction: column;
 
     h1{
-        font-size: 40px;
         color: white;
-    }
-
-    form{
-        flex-direction: column;
-        display: flex;
+        font-size: 40px;
     }
 `
 
-export const LoginElements = styled.div`
-    flex-direction: column;
+export const Inputs = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid white;
+    width: 500px;
+    border-radius: 20px;
+    padding: 15px;
+
 
     input{
-        margin: 13px;
+        margin: 10px;
         padding: 13px;
+        width: 300px;
         border-radius: 15px;
-        width: 350px;
-        color: black;
+    }
+
+    select{
+        margin: 10px;
+        padding: 13px;
+        width: 332px;
+        border-radius: 15px;
     }
 `
 
 export const Buttons = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     button{
         margin: 20px;
         border-radius: 20px;
@@ -44,7 +47,6 @@ export const Buttons = styled.div`
         color: white;
         background-color: transparent;
         border: 2px solid white;
-        margin: 30px;
 
         :hover{
             cursor: pointer;
@@ -52,4 +54,5 @@ export const Buttons = styled.div`
             color: black;
             border: 2px solid black;
         }
-    }`
+    }
+`

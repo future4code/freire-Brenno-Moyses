@@ -5,7 +5,7 @@ import { BASE_URL } from "../constants/BASE_URL";
 export function useGetData(path) {
 
     const [data, setData] = useState([]);
-    
+
     useEffect(()=>{
     axios
         .post(`${BASE_URL}${path}`)

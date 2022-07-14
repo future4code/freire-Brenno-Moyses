@@ -6,24 +6,35 @@ import {useNavigate} from "react-router-dom"
 import { TravelDetailsContainer } from './style'
 
 
-function style() {
+function TravelDetails() {
+    useEffect(() => {
+        const token = localStorage.getItem('token')
 
+        if(token === null){
+            console.log('Não está logado')
+        }
+    },[])
 
-    // useEffect(() => {
+    useEffect(() => {
+        const token = localStorage.getItem('token')
 
-    //     axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/brenno/trip/6SXzNsMEhBrcone1UmlG')
-    //     .then((res) => {
-    //         console.log(res.data)
-    //     }).catch ((err) => {
-    //         console.log(err.data)
-    //     })
-    // },[])
+        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/brenno/trip/:id', {
+            headers:{
+                auth: token
+            }
+        })
+        .then((res) => {
+            console.log(res.data)
+        }).catch ((err) => {
+            console.log(err.data)
+        })
+    },[])
     
   return (
     <TravelDetailsContainer>
-                <h1>OI</h1>
+                    Detalhes da viagem!
     </TravelDetailsContainer>
   )
 };
 
-export default style
+export default TravelDetails

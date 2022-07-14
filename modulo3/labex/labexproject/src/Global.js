@@ -4,7 +4,7 @@ import Space from './img/espaço.png'
 
 export const GlobalStyle = createGlobalStyle`
 *{
-    color: white;
+    /* color: white; */
 }
 body {
     margin: 0;

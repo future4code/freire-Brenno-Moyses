@@ -11,6 +11,10 @@ export const ListContainer = styled.div`
         color: white;
         font-size: 45px;
     }
+
+    p{
+        color: white;
+    }
 `
 
 export const Buttons = styled.div`
@@ -47,6 +51,7 @@ export const Card = styled.div`
     border: 3px solid white;
     border-radius: 10px;
     margin: 10px;
+    color: white;
 
     /* p{
         margin: 13px;
