@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
 import { goToHome } from '../../coordinator'
 import { useGetTrips } from '../../hooks/useGetTrips'
 import { goToTravelCreation } from '../../coordinator'
+import { BASE_URL } from '../../constants/BASE_URL'
 
 import { AdminAreaContainer } from './style'
 import { AdminMenu } from './style'
@@ -15,25 +16,41 @@ function AdminArea() {
 
     const navigate = useNavigate()
 
+    const deleteTravel = (id) => {
+        const token = localStorage.getItem("token")
+        axios
+            .delete(`${BASE_URL}/trips/${id}`,{
+                headers:{
+                    auth: token
+                }
+            })
+            .then((res)=>{
+                console.log(res)
+            })
+            .catch((err)=>{
+                console.log(err)
+            });
+    }
+
     const {trips, loading, error} = useGetTrips("/trips")
 
-    const travel = trips?.trips;
+    // const travel = trips?.trips;
     const getAllTrips = () => {
         if (loading) {
             return <p>...carregando</p>;
         } else if (!loading && error) {
             return <p>{error}</p>;
-        } else if (travel && travel.length > 0) {
-            return travel.map((trip)=>{
-                console.log(trip.name)
+        } else if (trips && trips.length > 0) {
+            return trips.map((trip)=>{
+                // console.log(trip.name)
                 return (
                     <Card key={trip.id}>
                         <p>{trip.name}</p>
-                        <button>Lixeira</button>
+                        <button onClick={()=>deleteTravel(trip.id)}>Lixeira</button>
                     </Card>
                 )
             });
-        } else if (travel?.length === 0) {
+        } else if (trips?.length === 0) {
     return <p>Nenhuma viagem existente</p>;
     }
 }; 

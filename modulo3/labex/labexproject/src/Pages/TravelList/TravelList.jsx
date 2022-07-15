@@ -16,15 +16,15 @@ function TravelList() {
 
     const {trips, loading, error} = useGetTrips("/trips")
 
-    const travel = trips?.trips;
-    console.log(travel)
+    // const travel = trips?.trips;
+    //  
     const getAllTrips = () => {
         if (loading) {
             return <p>...carregando</p>;
         } else if (!loading && error) {
             return <p>{error}</p>;
-        } else if (travel && travel.length > 0) {
-            return travel.map((trip)=>{
+        } else if (trips && trips.length > 0) {
+            return trips.map((trip)=>{
                 console.log(trip.name)
                 return (
                     <Card key={trip.id}>
@@ -38,7 +38,7 @@ function TravelList() {
                     </Card>
                 )
             });
-        } else if (travel?.length === 0) {
+        } else if (trips?.length === 0) {
             return <p>Nenhuma viagem existente</p>;
         }
     };

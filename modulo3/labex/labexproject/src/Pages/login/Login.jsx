@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
@@ -41,6 +41,14 @@ function Login() {
                 console.log('Deu errado: ', err.data);
             })
     }
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+
+        token === null
+            ? console.log("Token is null")
+            : navigate("/adminarea");
+    }, [navigate]);
 
     return (
         <LoginContainer>

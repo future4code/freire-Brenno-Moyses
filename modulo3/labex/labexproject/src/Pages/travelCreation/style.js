@@ -14,6 +14,7 @@ export const CreationFormContainer = styled.div`
 `
 
 export const Inputs = styled.div`
+    form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,20 +22,20 @@ export const Inputs = styled.div`
     width: 500px;
     border-radius: 20px;
     padding: 15px;
-
+    }
 
     input{
         margin: 10px;
         padding: 13px;
         width: 300px;
-        border-radius: 15px;
+        border-radius: 7px;
     }
 
     select{
         margin: 10px;
         padding: 13px;
         width: 332px;
-        border-radius: 15px;
+        border-radius: 7px;
     }
 `
 

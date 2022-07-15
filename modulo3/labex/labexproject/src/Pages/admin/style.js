@@ -13,6 +13,7 @@ export const AdminMenu = styled.div`
     h1{
         text-align: center;
         font-size: 40px;
+        color: white;
     }
     button{
         margin: 20px;

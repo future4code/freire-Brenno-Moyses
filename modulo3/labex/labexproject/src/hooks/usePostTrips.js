@@ -2,7 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../constants/BASE_URL";
 
-export function useGetTrips(path) {
+export function usePostTrips(path, token, body) {
+
     const [trips, setTrips] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
@@ -10,11 +11,15 @@ export function useGetTrips(path) {
     useEffect(()=>{
         setLoading(true);
         axios
-            .get(`${BASE_URL}${path}`)
+            .post(`${BASE_URL}${path}`, body,{
+                headers:{
+                    auth: token
+                }
+            })
             .then((res)=>{
-                // console.log(res)
+                console.log(res)
                 setLoading(false);
-                setTrips(res.data.trips);
+                setTrips(res.data);
             })
             .catch((err)=>{
                 console.log(err)
@@ -22,6 +27,5 @@ export function useGetTrips(path) {
                 setError(err.data)
             });
     },[]);
-    console.log(trips)
     return {trips, loading, error}
 }
