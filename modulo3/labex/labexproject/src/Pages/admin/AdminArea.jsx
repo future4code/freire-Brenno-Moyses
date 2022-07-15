@@ -6,10 +6,12 @@ import { goToHome } from '../../coordinator'
 import { useGetTrips } from '../../hooks/useGetTrips'
 import { goToTravelCreation } from '../../coordinator'
 import { BASE_URL } from '../../constants/BASE_URL'
+import { goToTravelDetails } from '../../coordinator'
 
 import { AdminAreaContainer } from './style'
 import { AdminMenu } from './style'
 import { Card } from './style'
+import { ButtonDetails } from './style'
 
 
 function AdminArea() {
@@ -26,6 +28,7 @@ function AdminArea() {
             })
             .then((res)=>{
                 console.log(res)
+                getAllTrips()
             })
             .catch((err)=>{
                 console.log(err)
@@ -65,7 +68,16 @@ function AdminArea() {
             <button>Logout</button>
         </AdminMenu>
     </AdminAreaContainer>
-        {getAllTrips()}
+        {
+            trips.map((trip)=>{
+                return (
+                    <Card key={trip.id}>
+                            <ButtonDetails onClick={()=>goToTravelDetails(navigate, trip.id)}><p>{trip.name}</p></ButtonDetails>
+                            <button onClick={()=>deleteTravel(trip.id)}>Lixeira</button>
+                    </Card>
+                )
+            })
+        }
     </>
   )
 }

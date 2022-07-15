@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import axios from "axios"
-import {useNavigate} from "react-router-dom"
+import {useNavigate, useParams} from "react-router-dom"
+import { BASE_URL } from '../../constants/BASE_URL'
 
 import { TravelDetailsContainer } from './style'
+import { Details } from './style'
 
 
 function TravelDetails() {
+
+    const [tripDetails, setTripDetails] = useState([]);
+
+    const params = useParams()
+
     useEffect(() => {
         const token = localStorage.getItem('token')
 
@@ -15,24 +22,35 @@ function TravelDetails() {
         }
     },[])
 
-    useEffect(() => {
+
+    useEffect(() =>{
         const token = localStorage.getItem('token')
 
-        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/brenno/trip/:id', {
+        axios.get(`${BASE_URL}/trip/${params.id}`, {
             headers:{
                 auth: token
             }
         })
         .then((res) => {
             console.log(res.data)
+            setTripDetails(res.data)
         }).catch ((err) => {
             console.log(err.data)
-        })
-    },[])
+        });
+    },[params])
     
   return (
     <TravelDetailsContainer>
-                    Detalhes da viagem!
+        <Details>
+        <h1>{tripDetails.trip.name}</h1>
+        <ul>
+            <li>Nome: {tripDetails.trip.name}</li>
+            <li>Descrição: {tripDetails.trip.description}</li>
+            <li>Planeta: {tripDetails.trip.planet}</li>
+            <li>Duração: {tripDetails.trip.durationInDays}</li>
+            <li>Data: {tripDetails.trip.date}</li>
+        </ul>
+        </Details>
     </TravelDetailsContainer>
   )
 };

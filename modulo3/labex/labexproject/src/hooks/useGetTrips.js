@@ -21,7 +21,6 @@ export function useGetTrips(path) {
                 setLoading(false);
                 setError(err.data)
             });
-    },[]);
-    console.log(trips)
+    },[trips]);
     return {trips, loading, error}
 }

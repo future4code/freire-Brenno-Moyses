@@ -11,17 +11,12 @@ export const FormContainer = styled.div`
     h1{
         font-size: 35px;
     }
-`
 
-export const Inputs = styled.div`
+    form{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 4px solid white;
-    width: 550px;
-    height: 450px;
-    border-radius: 20px;
 
     input,select{
         margin: 15px;
@@ -35,6 +30,8 @@ export const Inputs = styled.div`
         padding: 11px;
         width: 326px;
         border-radius: 15px;  
+    }
+
     }
 `
 
