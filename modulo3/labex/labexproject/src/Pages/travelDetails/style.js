@@ -4,7 +4,7 @@ export const TravelDetailsContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 120vh;
     color: white;
 `
 
@@ -16,7 +16,7 @@ export const Details = styled.div`
     min-height: 100vh;
 
     h1{
-        font-size: 50px;
+        font-size: 30px;
     }
     p{
         list-style: none;
@@ -70,8 +70,8 @@ export const AllCandidates = styled.div`
         text-align: center;
         margin-top: 13px;
         width: 500px;
-    }
+    } `
 
-    
-    
+export const ApprovedCandidates = styled.div`
+
 `

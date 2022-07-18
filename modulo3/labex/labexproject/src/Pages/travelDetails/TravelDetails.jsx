@@ -9,6 +9,7 @@ import { AllCandidates } from './style'
 
 import { TravelDetailsContainer } from './style'
 import { Details } from './style'
+import { ApprovedCandidates } from './style'
 
 
 function TravelDetails() {
@@ -82,9 +83,9 @@ function TravelDetails() {
 
     const approvedCandidates = tripDetails.approved?.map((trip) => {
         return (
-            <AllCandidates>
+            <ApprovedCandidates>
                 <p>Nome: {trip.name}</p>
-            </AllCandidates>
+            </ApprovedCandidates>
         )
     })
 
@@ -102,8 +103,10 @@ function TravelDetails() {
             <h1>Candidatos Pendentes</h1>
             {allCandidates}
         </Candidates>
-            {approvedCandidates}
+        <h1>Candidatos Aprovados</h1>
+        {approvedCandidates}    
         </Details>
+        
     </TravelDetailsContainer>
   )
 };
