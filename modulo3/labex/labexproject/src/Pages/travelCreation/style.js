@@ -18,7 +18,6 @@ export const Inputs = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 4px solid white;
     width: 500px;
     border-radius: 20px;
     padding: 15px;

@@ -22,14 +22,14 @@ export const FormContainer = styled.div`
         margin: 15px;
         padding: 13px;
         width: 300px;
-        border-radius: 15px;
+        border-radius: 10px;
     }
 
     select{
         margin: 10px;
         padding: 11px;
         width: 326px;
-        border-radius: 15px;  
+        border-radius: 10px;  
     }
 
     }

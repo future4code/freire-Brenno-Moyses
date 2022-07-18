@@ -7,6 +7,7 @@ import { useGetTrips } from '../../hooks/useGetTrips'
 import { goToTravelCreation } from '../../coordinator'
 import { BASE_URL } from '../../constants/BASE_URL'
 import { goToTravelDetails } from '../../coordinator'
+import Trash from '../../img/lixo.png'
 
 import { AdminAreaContainer } from './style'
 import { AdminMenu } from './style'
@@ -58,6 +59,11 @@ function AdminArea() {
     }
 }; 
 
+    const logout = () => {
+        localStorage.removeItem("token");
+        navigate("/home");
+    }
+
   return (
     <>
     <AdminAreaContainer>
@@ -65,7 +71,7 @@ function AdminArea() {
             <h1>Painel Administrativo</h1>
             <button onClick={()=>goToHome(navigate)}>Voltar</button>
             <button onClick={()=>goToTravelCreation(navigate)}>Criar viagem</button>
-            <button>Logout</button>
+            <button onClick={logout}>Logout</button>
         </AdminMenu>
     </AdminAreaContainer>
         {
@@ -73,7 +79,7 @@ function AdminArea() {
                 return (
                     <Card key={trip.id}>
                             <ButtonDetails onClick={()=>goToTravelDetails(navigate, trip.id)}><p>{trip.name}</p></ButtonDetails>
-                            <button onClick={()=>deleteTravel(trip.id)}>Lixeira</button>
+                            <button onClick={()=>deleteTravel(trip.id)}><img src={Trash} height ="30" width="30"></img></button>
                     </Card>
                 )
             })

@@ -42,14 +42,24 @@ export const Card = styled.div`
     margin: 0 auto;
     padding: 10px;
     margin-bottom: 20px;
+    background-color: transparent;
+
+    button{
+        background: transparent;
+        border: none;
+
+        :hover{
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
 
     p{
         color: white;
     }
     
-
-    border: 2px solid white;
-    border-radius: 20px;
+    border: 3px solid white;
+    border-radius: 10px;
 `
 
 export const ButtonDetails = styled.button`

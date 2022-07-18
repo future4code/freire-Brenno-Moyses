@@ -43,26 +43,23 @@ export const Buttons = styled.div`
 export const Card = styled.div`
     display: flex;
     flex-direction: column;
-    -webkit-box-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
     align-items: center;
-    width: 550px;
+    width: 500px;
     border: 3px solid white;
-    border-radius: 10px;
-    margin: 10px;
+    border-radius: 20px;
+    margin: 8px;
     color: white;
-
-    /* p{
-        margin: 13px;
-        margin-left: 20px;
-    }   */
+    background-color: transparent;
 `
 export const Elements = styled.div`
-    box-shadow: rgb(0 0 0 / 30%) 0px 4px 8px 0px;
     padding: 10px 20px;
     border-radius: 4px;
     margin: 10px 0px;
     max-width: 500px;
-    width: 100%;
+    width: 60%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 `
