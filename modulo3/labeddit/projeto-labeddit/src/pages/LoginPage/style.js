@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { TextField } from "@mui/material";
+import {Button} from "@mui/material";
 
 export const LoginContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    /* width:100vw; */
     flex-direction: column;
 `
 
@@ -14,10 +15,12 @@ export const LogoImage = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 25px;
 
     img{
         width: 152px;
         height: 142px;
+        margin: 20px;
     }
 
     p{
@@ -29,29 +32,18 @@ export const InputsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 90px;
+    margin: 20px 0;
 `
 export const StyledTextField = styled(TextField)`
-    width: 340px;
-    height: 50px;
     border: 1px solid #D5D8DE;
+    width: 300px !important;
 `
 
-export const ButtonsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    button{
-        border-radius: 27px;
-        background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
-        color: white;
-        width: 365px;
-        width: 340px;
-        padding: 13px 133px;
-        text-align: center;
-        border: none;
-    }
+export const StyledButton = styled(Button)`
+    background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+    border-radius: 27px;
+    color: white !important;
 `
+
+
 
