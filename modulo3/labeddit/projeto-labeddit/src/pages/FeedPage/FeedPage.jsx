@@ -2,16 +2,10 @@ import React from "react"
 import { InputsContainerFeed } from "./style"
 import { StyledTextField } from "./style"
 import { StyledTextField2 } from "./style"
-import { Button } from "@mui/material"
 import { StyledButton } from "./style"
 import useRequestData from "../../hooks/useRequestData"
 import { BASE_URL } from "../../constants/urls"
 import useProtectedPage from "../../hooks/useProtectedPage"
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import Comentario from '../../assets/img/comentario.png'
-import { StyledCard } from "./style"
 import Cardd from '../../components/Card/Cardd'
 import { FeedContainer } from "./style"
 import useForm from "../../hooks/useForm"
@@ -21,7 +15,6 @@ const FeedPage = () => {
 
     useProtectedPage()
     const posts = useRequestData([], `${BASE_URL}/posts`)
-    // console.log(posts)
 
     const postCards = posts.map((post) => {
         return (
@@ -38,7 +31,7 @@ const FeedPage = () => {
             }
         })
         .then((res) =>{
-            alert(res.data.message)
+            alert(res.data)
             clear()
         })
         .catch((err) =>alert(err.response.message))

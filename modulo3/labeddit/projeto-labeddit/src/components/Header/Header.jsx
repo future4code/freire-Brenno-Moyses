@@ -7,6 +7,9 @@ import IconButton from '@mui/material/IconButton';
 import Logo from '../../assets/img/logo.png'
 import { useNavigate } from 'react-router-dom';
 import { goToLogin } from '../../routes/coordinator';
+import { StyledToolbar } from './styled';
+import { goToFeed } from '../../routes/coordinator';
+
 
 
 const Header = () => {
@@ -31,10 +34,10 @@ const Header = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <StyledToolbar>
+          <button onClick={()=> goToFeed(navigate)}><img src={Logo} height="28px" width="28px"></img></button>
           <Button onClick={LoginAction} color="inherit">{token && token ? "Logout" : "Login"}</Button>
-          <img src={Logo} height="28px" width="28px"></img>
-        </Toolbar>
+        </StyledToolbar>
       </AppBar>
     </Box>
   );

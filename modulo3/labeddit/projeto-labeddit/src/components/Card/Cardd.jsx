@@ -1,7 +1,5 @@
-import { CardContainer } from "./style";
+
 import Comentario from "../../assets/img/comentario.png"
-import { FunctoinalitiesContainer } from "./style";
-import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
@@ -10,10 +8,19 @@ import Baixo from '../../assets/img/Baixo.png'
 import Cima from '../../assets/img/Cima.png'
 import { StyledCard } from "./style";
 import { Box } from "@mui/material";
-
-
+import { goToPost } from "../../routes/coordinator";
+import { useNavigate, useLocation } from "react-router-dom";
+import { createVote } from "../../services/posts";
+import { changeVote } from "../../services/posts";
 
 const Cardd = (props) => {
+
+    const {pathname} = useLocation()
+
+    const navigate = useNavigate()
+
+    
+
     return (
         <Box mt={2} key={props.post.id}>
             <StyledCard>
@@ -31,10 +38,15 @@ const Cardd = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small"><img src={Cima}></img></Button>
+                    <Button onClick={()=> createVote(props.post.id)} size="small"><img src={Cima}></img></Button>
                     <p>{props.post.voteSum}</p>
-                    <Button size="small"><img src={Baixo}></img></Button>
-                    <Button size="small"><img src={Comentario}></img></Button><p>{props.post.commentCount}</p>
+                    <Button onClick={()=>changeVote(props.post.id)} size="small"><img src={Baixo}></img></Button>
+
+                    {pathname === "/feed" ? (
+                        <><Button onClick={() => goToPost(navigate, props.post.id)} size="small"><img src={Comentario}></img></Button><p>{props.post.commentCount}</p></>
+                    ) : (
+                        ""
+                    )}
                 </CardActions>
             </StyledCard>
         </Box>

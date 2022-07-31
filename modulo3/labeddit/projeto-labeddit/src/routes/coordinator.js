@@ -1,15 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
 export const goToFeed = (navigate) => {
-    navigate("/")
+    navigate("/feed")
 }
 
 export const goToLogin = (navigate) => {
-    navigate("/login")
+    navigate("/")
 }
 
-export const goToPost = (navigate) => {
-    navigate("/post/:id")
+export const goToPost = (navigate, id) => {
+    navigate(`/post/${id}`)
 }
 
 export const goToRegistration = (navigate) => {
