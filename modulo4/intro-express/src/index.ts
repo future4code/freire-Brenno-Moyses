@@ -83,9 +83,11 @@ app.get('/posts',(req,res)=>{
     res.status(200).send(arrayPosts)
 })
 
-// app.get('/posts/:userId',(req,res)=>{
-//     const individualPost = postsList.map(par=>{
-//         if()
-//     })
-// })
+app.get('/posts/:userId',(req,res)=>{
+    const savePar = +req.params.userId
+    const individualPost = postsList.filter(par =>{
+        return par.userId === savePar
+    })
+    res.status(200).send(individualPost)
+})
 
