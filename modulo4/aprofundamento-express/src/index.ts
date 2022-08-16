@@ -54,3 +54,16 @@ app.get('/taskStatus', (req, res) => {
     res.status(200).send({tasks})
 })
 
+app.post('/tasks', (req, res) => {
+    const { title, completed } = req.body
+
+        const newList = tasksList.push({
+            id: Math.floor(Math.random() * 100),
+            title: title,
+            completed: completed,
+            userId: Math.floor(Math.random() * 100)
+        })
+        res.send({newList})
+    
+})
+
