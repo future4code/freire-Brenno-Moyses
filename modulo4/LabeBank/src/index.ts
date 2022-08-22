@@ -13,12 +13,23 @@ const server = app.listen(3003, () => {
 });
 
 app.post("/accounts/addAccount", (req, res) => {
-    const { name, cpf, birthdate } = req.body
-    try{const userAge = new Date().getFullYear() - birthdate.split("/")[2]
+    const { name, cpf, birthdate, balance } = req.body
+    const cpfUser = req.body.cpf
+    try{
+        const userAge = new Date().getFullYear() - birthdate.split("/")[2]
     if (userAge < 18) {
         res.statusCode = 401
         throw new Error (
             "Você precisar ter 18 anos ou mais."
+        )
+    }
+        const foundCpf = accountsList.find((account) =>
+            account.cpf === cpfUser
+        )
+    if(foundCpf) {
+        res.statusCode = 401
+        throw new Error (
+            "Esse cpf já está atrelado a uma conta existente."
         )
     }
         const newList = {
@@ -26,6 +37,7 @@ app.post("/accounts/addAccount", (req, res) => {
         name: name,
         cpf: cpf,
         birthdate: birthdate,
+        balance: 0
     }
     accountsList.push(newList)
     res.status(200).send(newList)
