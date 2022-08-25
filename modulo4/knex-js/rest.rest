@@ -1,0 +1,6 @@
+# GET http://localhost:3003/Actor/Tony Ramos
+# Content-Type: application/json
+
+GET http://localhost:3003/Actor1/male
+Content-Type: application/json
+
