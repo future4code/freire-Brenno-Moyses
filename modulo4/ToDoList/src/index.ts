@@ -43,3 +43,20 @@ app.put('/user/edit/:id', async (req, res) => {
         res.status(res.statusCode || 500).send({ message: error.message})
     }
 })
+
+app.post('/task', async (req, res) => {
+    try{
+        await connection("TodoListTask")
+        .insert({
+            id: Date.now().toString(),
+            description: req.body.description,
+            title: req.body.title,
+            limit_date: req.body.limit_date.split("/").reverse().join("-"),
+            creator_user_id: req.body.creator_user_id
+        })
+        .into("TodoListTask")
+        res.status(200).send("Tarefa criada com sucesso!")
+    }catch (error : any){
+        res.status(res.statusCode || 500).send({ message: error.message})
+    }
+})
