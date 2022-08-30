@@ -1,0 +1,4 @@
+GET http://localhost:3003/recipes?name=João
+
+###
+GET http://localhost:3003/recipes/Teacher
