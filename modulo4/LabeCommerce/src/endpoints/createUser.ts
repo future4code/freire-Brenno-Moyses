@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import insertUser from "../data/insertUser";
 import {Users} from "../type";
-import { userInsert } from "../type";
+import { userData } from "../type";
 
 export default async function createUser(req: Request, res: Response){
     try{
@@ -12,7 +12,7 @@ export default async function createUser(req: Request, res: Response){
             throw new Error("Todos os campos devem ser preeenchidos")
         }
 
-        const userInsert: userInsert = {
+        const userInsert: userData = {
             id: Date.now().toString(),
             name,
             email,
