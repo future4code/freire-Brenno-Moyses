@@ -40,6 +40,7 @@
     }
 
         const newUser = new UserAccount("126.689.887-43", "Brenno", 22)
+        const newUser2 = new UserAccount("123.456.678-65", "Fernando", 90)
 
     // b) Apenas uma vez.
 
@@ -79,6 +80,21 @@
 
     // EXERCICIO 3
 
+    class Bank{
+        private accounts: UserAccount[];
+
+        constructor(accounts: UserAccount[]){
+            this.accounts = accounts;
+        }
+
+        public getAccounts(): UserAccount[] {
+            return this.accounts
+        }
+    }
+
+    const newAccount = new Bank([newUser2, newUser])
+
+    console.table(newAccount.getAccounts())
 
 
 
