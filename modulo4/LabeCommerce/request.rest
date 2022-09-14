@@ -1,0 +1,26 @@
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "Brenno",
+    "email": "boechat@hotmail.com",
+    "password": "123senha"
+}
+###
+
+GET http://localhost:3003/users
+
+###
+
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "Xbox One",
+    "price": 1000,
+    "image_url": "LINK2"
+}
+
+###
+
+GET http://localhost:3003/products
