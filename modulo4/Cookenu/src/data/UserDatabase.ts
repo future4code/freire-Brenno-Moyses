@@ -18,6 +18,6 @@ export class UserDatabase extends BaseDatabase {
     public async findUserByEmail (email: string): Promise<User> {
         console.log(email)
         const user = await BaseDatabase.connection('Users').select('*').where({email})
-        return user[0];
+        return user[0] && User.toUserModel(user[0]);
     }   
 }
