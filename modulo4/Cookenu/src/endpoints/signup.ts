@@ -13,18 +13,18 @@ export async function signup (req: Request, res: Response) {
             res.status(422).send("Insira corretamente todas informações")
         }
 
+        const idGenerator = new IdGenerator();
+        const id = idGenerator.generate()
+
         const UserDataBase = new UserDatabase()
-        const user = UserDataBase.findUserById(id)
+        const user = await UserDataBase.findUserById(id)
 
         if(user){
             res.status(409).send("Esse id já existe"); 
         }
-        // ver como procurar por id e não por email
-        const idGenerator = new IdGenerator();
-        const id = idGenerator.generate
-
+        
         const hashManager = new HashManager()
-        const hashPassword = hashManager.hash(password)
+        const hashPassword = await hashManager.hash(password)
 
         const newUser = new User(id, name, email, hashPassword)
         await UserDataBase.createUser(newUser);
