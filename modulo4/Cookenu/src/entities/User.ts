@@ -1,9 +1,9 @@
 export class User{
     constructor(
-        private name: string,
+        private id: string,
         private email: string,
         private password: string,
-        private id: string
+        private name: string,
     ) {}
 
     public getId(){
