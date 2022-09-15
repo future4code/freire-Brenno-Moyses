@@ -19,5 +19,11 @@ export class UserDatabase extends BaseDatabase {
         console.log(email)
         const user = await BaseDatabase.connection('Users').select('*').where({email})
         return user[0] && User.toUserModel(user[0]);
-    }   
+    }
+    
+    public async getProfile (id: string): Promise<User>{
+        const user = await BaseDatabase.connection('Users').select("id","email","name").where({id})
+        console.log(user)
+        return user[0] && User.toUserModel(user[0]);
+    }
 }

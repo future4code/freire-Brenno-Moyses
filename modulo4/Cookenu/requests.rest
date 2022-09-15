@@ -13,6 +13,11 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {
-    "email": "Novo5@hotmail.com",
+    "email": "Novo4@hotmail.com",
     "password": "123433555890"
 }
+
+###
+
+GET http://localhost:3003/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkOTQ5ZmM3LTRhNTctNDNhYi04ODhkLTgzOTU4ZTdiYzRkMCIsImlhdCI6MTY2MzI3Nzk1OCwiZXhwIjoxNjYzMjc4MDE4fQ.DStMbikArzmiWjZLaOauvm-uf-qMW4yiRE2cj0x7JNI
