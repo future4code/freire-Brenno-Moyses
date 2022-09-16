@@ -21,3 +21,20 @@ Content-Type: application/json
 
 GET http://localhost:3003/user/profile
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkOTQ5ZmM3LTRhNTctNDNhYi04ODhkLTgzOTU4ZTdiYzRkMCIsImlhdCI6MTY2MzI3Nzk1OCwiZXhwIjoxNjYzMjc4MDE4fQ.DStMbikArzmiWjZLaOauvm-uf-qMW4yiRE2cj0x7JNI
+
+###
+
+POST http://localhost:3003/recipe
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkOTQ5ZmM3LTRhNTctNDNhYi04ODhkLTgzOTU4ZTdiYzRkMCIsImlhdCI6MTY2MzMzODExNiwiZXhwIjoxNjYzMzM4MTc2fQ.mJMaPYe4xIe45VFlfgwdmvvOuPy04m5V9Q9OnmyYkGs 
+Content-Type: application/json
+
+{
+    "title": "Arroz e feijão",
+    "description": "Prato tipico brasileiro"
+}
+
+###
+
+GET http://localhost:3003/recipe/2a926211-16dc-4fb0-951c-3bb7c8d8b05f
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkOTQ5ZmM3LTRhNTctNDNhYi04ODhkLTgzOTU4ZTdiYzRkMCIsImlhdCI6MTY2MzM1MTc0MSwiZXhwIjoxNjYzMzUxODAxfQ.cm2C3lx6cIn6VHmnV-ZNv2oGs6m6GSY3QzfPX9jEUFs
+

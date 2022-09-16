@@ -1,3 +1,4 @@
+import { Recipe } from "../entities/Recipe";
 import { User } from "../entities/User";
 import { BaseDatabase } from "./BaseDatabase";
 
@@ -26,4 +27,23 @@ export class UserDatabase extends BaseDatabase {
         console.log(user)
         return user[0] && User.toUserModel(user[0]);
     }
+
+    public async createRecipe (recipe: Recipe): Promise<void>{
+        try{
+            await BaseDatabase.connection('Recipes').insert({
+                id: recipe.getId(),
+                title: recipe.getTitle(),
+                description: recipe.getDescription(),
+                createdAt: recipe.getCreatedAt()
+            })
+        }catch(error: any){
+            throw new Error(error.sqlMessage || error.message)
+        }
+    }
+
+    public async getRecipe (id: string): Promise<Recipe>{
+        const recipe = await BaseDatabase.connection('Recipes').select("title","description","createdAt").where({id})
+        return recipe[0] && Recipe.toRecipeModel(recipe[0]);
+    }
+
 }
