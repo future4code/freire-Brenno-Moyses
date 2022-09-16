@@ -10,3 +10,4 @@ app.post("/login", login);
 app.get("/user/profile", getProfile)
 app.post("/recipe", createRecipe)
 app.get ("/recipe/:id", getRecipe)
+app.get ("/user/:id", getProfile)

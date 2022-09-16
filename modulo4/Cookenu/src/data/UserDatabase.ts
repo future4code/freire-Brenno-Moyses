@@ -24,7 +24,6 @@ export class UserDatabase extends BaseDatabase {
     
     public async getProfile (id: string): Promise<User>{
         const user = await BaseDatabase.connection('Users').select("id","email","name").where({id})
-        console.log(user)
         return user[0] && User.toUserModel(user[0]);
     }
 
@@ -44,6 +43,11 @@ export class UserDatabase extends BaseDatabase {
     public async getRecipe (id: string): Promise<Recipe>{
         const recipe = await BaseDatabase.connection('Recipes').select("title","description","createdAt").where({id})
         return recipe[0] && Recipe.toRecipeModel(recipe[0]);
+    }
+
+    public async getProfileId (id: string): Promise<User>{
+        const profile = await BaseDatabase.connection('Users').select("id","email","name").where({id})
+        return profile[0] && User.toUserModel(profile[0]);
     }
 
 }
