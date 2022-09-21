@@ -1,0 +1,44 @@
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+    "email": "Novo4@hotmail.com",
+    "password": "123433555890",
+    "name": "Novo4"
+}
+
+###
+
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "Novo4@hotmail.com",
+    "password": "123433555890"
+}
+
+###
+
+GET http://localhost:3003/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkOTQ5ZmM3LTRhNTctNDNhYi04ODhkLTgzOTU4ZTdiYzRkMCIsImlhdCI6MTY2MzI3Nzk1OCwiZXhwIjoxNjYzMjc4MDE4fQ.DStMbikArzmiWjZLaOauvm-uf-qMW4yiRE2cj0x7JNI
+
+###
+
+POST http://localhost:3003/recipe
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkOTQ5ZmM3LTRhNTctNDNhYi04ODhkLTgzOTU4ZTdiYzRkMCIsImlhdCI6MTY2MzMzODExNiwiZXhwIjoxNjYzMzM4MTc2fQ.mJMaPYe4xIe45VFlfgwdmvvOuPy04m5V9Q9OnmyYkGs 
+Content-Type: application/json
+
+{
+    "title": "Arroz e feijão",
+    "description": "Prato tipico brasileiro"
+}
+
+###
+
+GET http://localhost:3003/recipe/2a926211-16dc-4fb0-951c-3bb7c8d8b05f
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkOTQ5ZmM3LTRhNTctNDNhYi04ODhkLTgzOTU4ZTdiYzRkMCIsImlhdCI6MTY2MzM1MzcyMiwiZXhwIjoxNjYzMzUzNzgyfQ.-gYyAwx5Bo8LF8q_redPmGkpKODwTpqAj_T32z27_kM
+
+###
+
+GET http://localhost:3003/user/$2a$10$NO.bRE9IFokc05ZbEZEK0ebkOplXOm3WSEQntxXtOZBIjwnlbWmii
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkOTQ5ZmM3LTRhNTctNDNhYi04ODhkLTgzOTU4ZTdiYzRkMCIsImlhdCI6MTY2MzM2NjA0OSwiZXhwIjoxNjYzMzY2MTA5fQ.2izs8jqf2I9lk633ZR-AKmsGB0d60KCbIUY_C7bN4QY 
