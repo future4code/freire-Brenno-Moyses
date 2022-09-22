@@ -11,3 +11,13 @@ Content-Type: application/json
     "email": "BrennoBoechat@hotmail.com",
     "password": "Brenno123456"
 }
+
+###
+
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "BrennoBoechat@hotmail.com",
+    "password": "Brenno123456"
+}
