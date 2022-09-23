@@ -21,3 +21,13 @@ Content-Type: application/json
     "email": "BrennoBoechat@hotmail.com",
     "password": "Brenno123456"
 }
+
+###
+
+POST http://localhost:3003/posts/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTY5OGQ0LTRjNjQtNDYxYy04YzA3LTVjZGEwZTIxMGZmOSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM5NzM2ODgsImV4cCI6MTY2NDA2MDA4OH0.8lqFX_bWLvak_n0bTYX8drjlBqoO56eOKGo0YHSiI90
+
+{
+    "content": "Post"
+}

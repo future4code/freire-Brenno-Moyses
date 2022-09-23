@@ -10,6 +10,15 @@ export interface ILikeDB {
     user_id: string
 }
 
+export interface ICreatePostInputDTO{
+    token: string,
+    content: string
+}
+
+export interface ICreatePostOutputDTO {
+    message:string,
+    post: Post
+}
 export class Post {
     constructor(
         private id: string,
@@ -17,6 +26,7 @@ export class Post {
         private userId: string,
         private likes: number = 0
     ) {}
+
 
     public getId = () => {
         return this.id
