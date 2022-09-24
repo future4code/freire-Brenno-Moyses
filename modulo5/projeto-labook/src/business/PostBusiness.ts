@@ -1,5 +1,5 @@
 import { PostDatabase } from "../database/PostDatabase"
-import { ICreatePostInputDTO, ICreatePostOutputDTO, Post } from "../models/Post"
+import { ICreatePostInputDTO, ICreatePostOutputDTO,IGetPostsOutputDTO,Post } from "../models/Post"
 import { Authenticator } from "../services/Authenticator"
 import { IdGenerator } from "../services/IdGenerator"
 
@@ -37,6 +37,37 @@ export class PostBusiness {
         }
 
         return response
+    }
+
+    public getposts = async(token: string) => {
+
+        const payload = this.authenticator.getTokenPayload(token)
+
+        if (!payload) {
+            throw new Error ("Token inválido")
+        }
+
+        const postDB = await this.postDatabase.getPosts()
+
+        const posts = postDB.map((post) =>{
+            return new Post(post.id,post.content,post.user_id)
+        })
+
+        for(let post of posts){
+            const postId = post.getId()
+            const likes = await this.postDatabase.getLikes(postId)
+
+            post.setLikes(likes)
+        }
+
+        console.log(posts)
+
+        const responseType: IGetPostsOutputDTO[] = posts.map((post) => {
+            return this.postDatabase.postModelLike(post)
+        })
+
+        return responseType
+
     }
 
 }

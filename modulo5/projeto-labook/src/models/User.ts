@@ -21,7 +21,6 @@ export interface ILoginInputDTO {
     email: string,
     password: string
 }
-
 export class User {
     constructor(
         private id: string,
