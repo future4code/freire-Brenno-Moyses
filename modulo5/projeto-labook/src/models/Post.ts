@@ -27,6 +27,11 @@ export interface ICreatePostOutputDTO {
     post: Post
 }
 
+export interface IDeletePostInputDTO {
+    token: string,
+    idPost: string
+}
+
 export class Post {
     constructor(
         private id: string,
