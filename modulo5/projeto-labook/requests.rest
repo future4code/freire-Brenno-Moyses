@@ -1,0 +1,44 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+###
+
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Brenno",
+    "email": "BrennoBoechat@hotmail.com",
+    "password": "Brenno123456"
+}
+
+###
+
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "BrennoBoechat@hotmail.com",
+    "password": "Brenno123456"
+}
+
+###
+
+POST http://localhost:3003/posts/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTY5OGQ0LTRjNjQtNDYxYy04YzA3LTVjZGEwZTIxMGZmOSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM5NzM2ODgsImV4cCI6MTY2NDA2MDA4OH0.8lqFX_bWLvak_n0bTYX8drjlBqoO56eOKGo0YHSiI90
+
+{
+    "content": "Post"
+}
+
+###
+
+GET http://localhost:3003/posts/postsall
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTY5OGQ0LTRjNjQtNDYxYy04YzA3LTVjZGEwZTIxMGZmOSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjQwMjk1MTUsImV4cCI6MTY2NDExNTkxNX0.LI35GwoEReIyFqSocfjMnFi6nHRxFI2YW19vIeruHKg
+
+
+###
+
+DELETE http://localhost:3003/posts/:id
+Authorization: 
