@@ -1,0 +1,21 @@
+### Ping
+GET http://localhost:3003/ping
+
+### Signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Brenno",
+    "email": "Brenno@gmail.com",
+    "password": "Brenno123"
+}
+
+### Login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "Brenno@gmail.com",
+    "password": "Brenno123"
+}
