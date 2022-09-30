@@ -29,5 +29,16 @@ export class ShowController {
             }
             res.status(500).send({ message: "Erro inesperado ao cadastrar show" })
         }
-    } 
+    }
+    
+    public getShows = async (req: Request, res: Response) => {
+        try{
+            const response = await this.showBusiness.getShows()
+
+            res.status(200).send(response)
+
+        }catch(error:any){
+            res.status(error.statuscode || 500).send({message:error.message})
+        }
+    }
 }

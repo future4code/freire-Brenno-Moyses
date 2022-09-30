@@ -16,3 +16,4 @@ const showController = new ShowController(
 )
 
 showRouter.post("/create-show", showController.createShow)
+showRouter.get("/get-all-shows",showController.getShows)

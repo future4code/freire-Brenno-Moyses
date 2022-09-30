@@ -4,8 +4,9 @@ import { ParamsError} from "../errors/ParamsError"
 import { Authenticator} from "../services/Authenticator"
 import { IdGenerator } from "../services/IdGenerator"
 import { AuthenticationError } from "../errors/AuthenticationError"
-import { ICreateShowInputDTO, Show } from "../models/Show"
+import { ICreateShowInputDTO, IShowDB, Show } from "../models/Show"
 import { USER_ROLES } from "../models/User"
+import moment from "moment"
 
 export class ShowBusiness {
     constructor(
@@ -71,5 +72,17 @@ public createShow = async (input: ICreateShowInputDTO ) => {
 
     return response
 
+    }
+
+    public getShows = async() => {
+
+    const showDB: any = await this.showDatabase.getShows()
+
+    const response = {
+        show: showDB
+    }
+
+    return response
+    
     }
 }
