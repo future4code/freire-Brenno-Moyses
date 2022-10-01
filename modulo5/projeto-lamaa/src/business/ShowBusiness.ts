@@ -78,11 +78,19 @@ public createShow = async (input: ICreateShowInputDTO ) => {
 
     const showDB: any = await this.showDatabase.getShows()
 
+    const showsMapped = showDB?.map((show: any) => {
+        return{
+            id:show.id,
+            bando:show.band,
+            starts_at:moment(show.starts_at).format("DD/MM/YYYY")
+        }
+    }) 
+    
+
     const response = {
-        show: showDB
+        shows: showsMapped
     }
 
-    return response
-    
+    return response 
     }
 }
