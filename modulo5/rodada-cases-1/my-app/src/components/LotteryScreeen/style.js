@@ -1,11 +1,11 @@
 import styled from "styled-components"
 import Sidebar from '../../image/Sidebar.png'
+import Ball from '../../image/Ellipse 1.png'
 
 export const LotteryScreenContainer = styled.div`
 display: flex;
 height: 100vh;
 width: 100%;
-background-color: #efefef;
 background: url(${Sidebar}) no-repeat;
 `
 
@@ -46,4 +46,12 @@ p{
     font-size: 20px;
     color: white;
 }
+`
+
+export const LotteryNumbersContainer = styled.div`
+display: flex;
+align-items: center;
+margin-left: auto;
+margin-right: auto; 
+gap: 20px;
 `

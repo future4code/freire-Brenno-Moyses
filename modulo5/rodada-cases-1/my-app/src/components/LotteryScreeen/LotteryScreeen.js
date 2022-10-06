@@ -6,9 +6,13 @@ import {SelectContainer} from "./style"
 import {LotteryNameContainer} from "./style"
 import {LotteryElementsContainer} from "./style"
 import {LotteryContestContainer} from "./style"
-import Logo from "../../image/Logo_Sena.png"
+import {LotteryNumbersContainer} from "./style"
 
-const LotteryScreen = () => {
+import Logo from "../../image/Logo_Sena.png"
+import Ball from '../../image/Ellipse 1.png'
+
+
+const LotteryScreen = ({setLottery}) => {
 
     const [lotteryState, setLotteryState] = useState("")
 
@@ -35,6 +39,14 @@ const LotteryScreen = () => {
                 <p>Concurso</p>
             </LotteryContestContainer>
             </LotteryElementsContainer>
+            <LotteryNumbersContainer>
+            <img src={Ball}/>
+            <img src={Ball}/>
+            <img src={Ball}/>
+            <img src={Ball}/>
+            <img src={Ball}/>
+            <img src={Ball}/>
+            </LotteryNumbersContainer>
         </LotteryScreenContainer>
     )
 }
