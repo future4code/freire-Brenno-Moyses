@@ -7,14 +7,17 @@ import {LotteryNameContainer} from "./style"
 import {LotteryElementsContainer} from "./style"
 import {LotteryContestContainer} from "./style"
 import {LotteryNumbersContainer} from "./style"
+import {Ball} from "./style"
+import moment from "moment"
 
 import Logo from "../../image/Logo_Sena.png"
-import Ball from '../../image/Ellipse 1.png'
 
 
-const LotteryScreen = ({setLottery}) => {
+const LotteryScreen = ({setLottery, lottery, contests}) => {
 
-    const [lotteryState, setLotteryState] = useState("")
+    const mappedContests = contests.numeros?.map((numero) => {
+        return (<Ball><p>{numero}</p></Ball>)
+    })
 
     return (
         <LotteryScreenContainer>
@@ -22,7 +25,7 @@ const LotteryScreen = ({setLottery}) => {
             <SelectContainer>
                 <select onChange={(e) => {
                     const selectedLottery = e.target.value
-                    setLotteryState(selectedLottery)
+                    setLottery(selectedLottery)
                 }}>
                     <option value="Mega-Sena">Mega-Sena</option>
                     <option value="Quina">Quina</option>
@@ -33,19 +36,15 @@ const LotteryScreen = ({setLottery}) => {
                 </select>
             </SelectContainer>
             <LotteryNameContainer>
-            <img src={Logo} height ="55" width="59"></img><h1>{lotteryState}</h1>
+            <img src={Logo} height ="55" width="59"></img><h1>{lottery}</h1>
             </LotteryNameContainer>
             <LotteryContestContainer>
                 <p>Concurso</p>
+                <p>{contests.id}, {moment(contests.data).format("DD/MM/YYYY")}</p>
             </LotteryContestContainer>
             </LotteryElementsContainer>
             <LotteryNumbersContainer>
-            <img src={Ball}/>
-            <img src={Ball}/>
-            <img src={Ball}/>
-            <img src={Ball}/>
-            <img src={Ball}/>
-            <img src={Ball}/>
+                {mappedContests}
             </LotteryNumbersContainer>
         </LotteryScreenContainer>
     )

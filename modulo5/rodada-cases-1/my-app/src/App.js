@@ -8,7 +8,7 @@ import { GetLotteryContest } from "./services/Lottery";
 import { GetContest } from "./services/Lottery";
 
 function App() {
-  const [lottery, setLottery] = useState("mega-sena")
+  const [lottery, setLottery] = useState("Mega-Sena")
 
   const allLotterys = GetLottery();
   const filterLotterys = allLotterys?.find(
@@ -30,6 +30,8 @@ function App() {
       <GlobalStyle/>
       <LotteryScreen
       setLottery = {setLottery}
+      lottery = {lottery}
+      contests = {contests}
       />
     </div>
   );
