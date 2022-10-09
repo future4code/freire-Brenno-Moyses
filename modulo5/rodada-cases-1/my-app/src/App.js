@@ -23,8 +23,6 @@ function App() {
   const id = filterContests?.concursoId;
   const contests = GetContest(id)
 
-  
-
   return (
     <div>
       <GlobalStyle/>

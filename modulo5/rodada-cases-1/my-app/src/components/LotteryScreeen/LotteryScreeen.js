@@ -20,7 +20,12 @@ const LotteryScreen = ({setLottery, lottery, contests}) => {
     })
 
     return (
-        <LotteryScreenContainer>
+        <LotteryScreenContainer
+        lottery = {lottery}
+        >
+            <svg width="613" height="1080" viewBox="0 0 613 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M613 0C613 0 361.26 501.011 613 1080H0V0H613Z"/>
+            </svg>
             <LotteryElementsContainer>
             <SelectContainer>
                 <select onChange={(e) => {
@@ -32,7 +37,7 @@ const LotteryScreen = ({setLottery, lottery, contests}) => {
                     <option value="Lotofácil">Lotofácil</option>
                     <option value="Lotomania">Lotomania</option>
                     <option value="Timemania">Timemania</option>
-                    <option value="Dia de sorte">Dia de sorte</option>
+                    <option value="Dia de Sorte">Dia de sorte</option>
                 </select>
             </SelectContainer>
             <LotteryNameContainer>

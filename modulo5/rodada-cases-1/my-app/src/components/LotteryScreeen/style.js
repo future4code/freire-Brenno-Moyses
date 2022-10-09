@@ -1,11 +1,40 @@
 import styled from "styled-components"
-import Sidebar from '../../image/Sidebar.png'
 
 export const LotteryScreenContainer = styled.div`
 display: flex;
 height: 100vh;
 width: 100%;
-background: url(${Sidebar}) no-repeat;
+position: relative;
+
+svg{
+    fill: #6BEFA3;
+    height: 100%;
+    width: 45%;
+    position: absolute;
+    left: -10%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    fill: ${({lottery}) => {
+        switch (lottery) {
+            case "Mega-Sena":
+                return "#6BEFA3";
+            case "Quina":
+                return "#8666EF";
+            case "Lotofácil":
+                return "#DD7AC6";
+            case "Lotomania":
+                return "#FFAB64";
+            case "Timemania":
+                return "#5AAD7D"
+            case "Dia de Sorte":
+                return "#BFAF83"
+            default:
+                break
+        }
+    }};
+}
 `
 
 export const LotteryElementsContainer = styled.div`
@@ -14,7 +43,8 @@ flex-direction: column;
 justify-content: space-around;
 height: 100vh;
 width: 25%;
-margin-left: 15vh;
+margin-left: 10vh;
+z-index: 1;
 `
 
 export const SelectContainer = styled.div`
