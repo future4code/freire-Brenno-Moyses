@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import Menu from "./pages/Menu";
+import Orders from "./pages/Orders";
+import styled from "styled-components";
+import { useState } from "react";
+
+export const ContainerMain = styled.main`
+    display: flex;
+`
+
 
 function App() {
+    const [cart, setCart] = useState([])
+
+    const addToCart = (pizza) => {
+      const foundIndex = cart.findIndex((pizzaCart) => {
+        return pizzaCart.name === pizza.name
+      })
+
+      if(foundIndex >= 0) {
+        const newCart = [...cart]
+        newCart[foundIndex].quantity += 1
+        setCart(newCart)
+      } else {
+        const newCart = [...cart]
+        const newPizza = {
+          name: pizza.name,
+          price: pizza.price,
+          quantity: 1
+        }
+        newCart.push(newPizza)
+        setCart(newCart)
+
+      }
+    }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContainerMain>
+      <Menu addToCart={addToCart} />
+      <Orders cart={cart} />
+    </ContainerMain>
+
   );
 }
 
