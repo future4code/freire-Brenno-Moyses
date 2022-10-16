@@ -12,28 +12,25 @@ export const ContainerSection = styled.section`
 `
 
 function Orders(props) {
-    const {cart} = props
-
-    const calculateTotal = () => {
-        const total = cart.reduce((acc,item)=> 
-             acc + (item.price * item.quantity)
-        , 0)
-
-        return total.toLocaleString
-        ('pt-br',
-            { style: 'currency', currency: 'USD' }
-        )}
+    const {cart, removeItem, total, confirmOrder} = props
 
     return (
         <ContainerSection>
             <h1>Pedido</h1>
             {cart.map((pizza) => {
                 return (
-                    <ItemCard key={pizza.name} pizza={pizza}/>
+                    <ItemCard key={pizza.name} 
+                    pizza={pizza} 
+                    removeItem={removeItem}/>
                 )
             })}
-            <h2>Total: {calculateTotal()}</h2>
-            <button>Confirmar Pedido</button>
+            <h2>
+                Total: {total.toLocaleString(
+                'pt-br',
+                { style: 'currency', currency: 'USD' }
+                )}
+            </h2>
+            <button onClick={confirmOrder}>Confirmar Pedido</button>
         </ContainerSection>
     )
 }
