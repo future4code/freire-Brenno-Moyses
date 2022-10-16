@@ -3,12 +3,39 @@ import styled from "styled-components"
 
 export const ContainerSection = styled.section`
     width: 30em;
-    border: 1px solid black;
+    border: 2px solid grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 
     h1{
         font-size: 1.5em;
         text-align: center;
     }
+
+    h2{
+        text-align: center;
+    }
+`
+
+export const ConfirmButton = styled.button`
+    width: 60%;
+            height: 5vh;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #EB1D36;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            opacity: 80%;
+
+            :hover{
+                cursor: pointer;
+                opacity: 100%;
+                transition: 0.3s;
+            }
 `
 
 function Orders(props) {
@@ -24,13 +51,13 @@ function Orders(props) {
                     removeItem={removeItem}/>
                 )
             })}
-            <h2>
-                Total: {total.toLocaleString(
-                'pt-br',
-                { style: 'currency', currency: 'USD' }
-                )}
-            </h2>
-            <button onClick={confirmOrder}>Confirmar Pedido</button>
+                <h2>
+                    Total: {total.toLocaleString(
+                    'pt-br',
+                    { style: 'currency', currency: 'USD' }
+                    )}
+                </h2>
+                <ConfirmButton onClick={confirmOrder}>Confirmar Pedido</ConfirmButton>
         </ContainerSection>
     )
 }

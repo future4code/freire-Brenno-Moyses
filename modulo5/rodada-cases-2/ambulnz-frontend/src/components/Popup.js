@@ -5,7 +5,7 @@ export const ContianerDiv = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(50%, -50%);
+    transform: translate(-50%, -50%);
     width: auto;
 
     background-color: white;
@@ -28,7 +28,7 @@ export const ContianerDiv = styled.div`
     :hover{
         cursor: pointer;
         font-weight: bold;
-        background-color: lightgray;
+        background-color: #EB1D36;
     }
     }
 }
@@ -39,11 +39,12 @@ function Popup(props) {
     return (
         <ContianerDiv>
             <div>
+                <h2>Pedido realizado com sucesso!</h2>
                 <h3>Resumo do pedido</h3>
                 <p>Id do pedido: {order.id}</p>
                 {order.pizzas.map((pizza) => (
                     <p key={pizza.name}>
-                        Pizza {pizza.name}
+                        Pizza {pizza.name} {" "}
                         - {pizza.price.toLocaleString
                             ('pt-br',
                                 { style: 'currency', currency: 'USD' }
@@ -51,7 +52,12 @@ function Popup(props) {
                         {" "} x {pizza.quantity}
                     </p>
                 ))}
-                <p>Total pago: {order.total}</p>
+                <p>Total pago: {
+                order.total.toLocaleString
+                        ('pt-br',
+                        { style: 'currency', currency: 'USD' }
+                    )}
+                </p>
                 <span className="close-popup"
                 onClick={closePopup}
                 >

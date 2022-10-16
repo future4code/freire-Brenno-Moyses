@@ -1,7 +1,21 @@
 import styled from "styled-components"
+import Trash from "../img/trash.png"
 
 export const ContainerLi = styled.li`
     display: flex;
+    margin: 10px;
+
+    button{
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: transparent;
+
+        :hover{
+            cursor: pointer;
+        }
+
+    }
 `
 
 function ItemCard(props) {
@@ -16,7 +30,7 @@ function ItemCard(props) {
                         { style: 'currency', currency: 'USD' }
                     )}
                 {" "} x {pizza.quantity}</p>
-            <button onClick={() => removeItem(pizza)}>Remover</button>
+            <button onClick={() => removeItem(pizza)}><img src={Trash}/></button>
         </ContainerLi>
     )
 }
