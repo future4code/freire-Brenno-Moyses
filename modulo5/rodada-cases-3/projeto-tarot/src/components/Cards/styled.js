@@ -39,6 +39,8 @@ export const ImageCards = styled.img`
 
     :hover{
     cursor: pointer;
-    box-shadow: 5px 0px 15px 5px purple;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.7s;
 } 
 `

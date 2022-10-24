@@ -3,7 +3,7 @@ import { BASE_URL } from "./constants";
 import { useEffect, useState } from "react"
 import { GlobalStyle } from "./Global";
 import Cards from "./components/Cards/Cards";
-import styled from "styled-components";
+import Modal from "./components/Modal/Modal";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -21,6 +21,10 @@ function App() {
 
   return (
     <div>
+      {/* <Modal
+      cards = {cards}
+      setCards = {setCards}
+      /> */}
       <Cards
       cards = {cards}
       />

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Modal from "../Modal/Modal";
 
 import { CardContainer } from "./styled";
 import { ButtonContainer } from "./styled";
@@ -8,18 +9,20 @@ import {ImageCards} from "./styled"
 function Cards(props) {
     const { cards } = props
 
-    const [imageCard, setImageCard] = useState(true)
+    const [imageCard, setImageCard] = useState(true);
+    const [showModal, setShowModal] = useState(false)
 
     const ImageBackCard = cards.imageBackCard
 
     const ImagesUrl = cards.imagesUrl;
+
 
     const MappedCards = cards.cards?.map((card) => {
         if(imageCard) {
             const renderCard = ImagesUrl + card.image
             return <ImageCards src={renderCard}></ImageCards>
         } else {
-            return <ImageCards src={ImageBackCard}></ImageCards>
+            return <ImageCards onClick={() => setShowModal(!showModal)} src={ImageBackCard}></ImageCards>
         }
         
     })
@@ -32,8 +35,6 @@ function Cards(props) {
     return arr;
     }
 
-    console.log(cards)
-
     const flipCard = () => {
         setImageCard(!imageCard)
         shuffleArray(cards.cards)
@@ -42,6 +43,10 @@ function Cards(props) {
 
     return (
         <div>
+            <Modal
+            showModal = {showModal}
+            setShowModal = {setShowModal}
+            />
             <ButtonContainer>
                 <button onClick={flipCard}>JOGAR</button>
             </ButtonContainer>
