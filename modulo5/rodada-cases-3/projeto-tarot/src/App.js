@@ -21,10 +21,6 @@ function App() {
 
   return (
     <div>
-      {/* <Modal
-      cards = {cards}
-      setCards = {setCards}
-      /> */}
       <Cards
       cards = {cards}
       />

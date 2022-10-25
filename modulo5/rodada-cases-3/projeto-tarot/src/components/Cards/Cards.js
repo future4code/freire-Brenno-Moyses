@@ -7,7 +7,7 @@ import { ButtonContainer } from "./styled";
 import {ImageCards} from "./styled"
 
 function Cards(props) {
-    const { cards } = props
+    const { cards, renderCard } = props
 
     const [imageCard, setImageCard] = useState(true);
     const [showModal, setShowModal] = useState(false)
@@ -16,13 +16,17 @@ function Cards(props) {
 
     const ImagesUrl = cards.imagesUrl;
 
+    function closeWindow() {
+        setShowModal(false)
+    }
+
 
     const MappedCards = cards.cards?.map((card) => {
         if(imageCard) {
             const renderCard = ImagesUrl + card.image
             return <ImageCards src={renderCard}></ImageCards>
         } else {
-            return <ImageCards onClick={() => setShowModal(!showModal)} src={ImageBackCard}></ImageCards>
+            return <ImageCards onClose={closeWindow} onClick={() => setShowModal(!showModal)} src={ImageBackCard}></ImageCards>
         }
         
     })
@@ -46,6 +50,8 @@ function Cards(props) {
             <Modal
             showModal = {showModal}
             setShowModal = {setShowModal}
+            closeWindow = {closeWindow}
+            cards = {cards}
             />
             <ButtonContainer>
                 <button onClick={flipCard}>JOGAR</button>
