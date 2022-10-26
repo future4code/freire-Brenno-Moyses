@@ -18,14 +18,36 @@ export const Container = styled.div`
     color: #000;
     width: 60%;
     height: 60%;
+    border-radius: 50px;
+    display: flex;
 
-    h1{
+    .PhotoDescription{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         text-align: center;
     }
 
-    h2{
+    img{
+        width: 200px;
+        height: 350px;
+        margin-right: 50px;
+    }
+
+    .reset-button{
         text-align: center;
-        margin: 50px;
+        align-items: center;
+    }
+
+    h1{
+        text-align: center;
+        justify-content: center;
+        align-self: center;
+    }
+
+    h2{
+        width: 70%;
+        margin-right: 50px;
     }
 
     button {

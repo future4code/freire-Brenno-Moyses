@@ -7,10 +7,11 @@ import { ButtonContainer } from "./styled";
 import {ImageCards} from "./styled"
 
 function Cards(props) {
-    const { cards, renderCard } = props
+    const {cards} = props
 
     const [imageCard, setImageCard] = useState(true);
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false);
+    const [nameTarot, setNameTarot] = useState("")
 
     const ImageBackCard = cards.imageBackCard
 
@@ -20,15 +21,22 @@ function Cards(props) {
         setShowModal(false)
     }
 
+    function openModal(nameTarot){
+        setNameTarot(nameTarot)
+        setShowModal(!showModal)
+    }
 
     const MappedCards = cards.cards?.map((card) => {
         if(imageCard) {
             const renderCard = ImagesUrl + card.image
             return <ImageCards src={renderCard}></ImageCards>
         } else {
-            return <ImageCards onClose={closeWindow} onClick={() => setShowModal(!showModal)} src={ImageBackCard}></ImageCards>
+            return <ImageCards onClose={closeWindow} onClick={() => openModal(card.name)} src={ImageBackCard}></ImageCards>
         }
-        
+    })
+
+    const FilterCards = cards.cards?.find((card) => {
+        return card.name === nameTarot
     })
 
     function shuffleArray(arr) {
@@ -44,7 +52,6 @@ function Cards(props) {
         shuffleArray(cards.cards)
     }
 
-
     return (
         <div>
             <Modal
@@ -52,6 +59,8 @@ function Cards(props) {
             setShowModal = {setShowModal}
             closeWindow = {closeWindow}
             cards = {cards}
+            FilterCards = {FilterCards}
+            ImagesUrl = {ImagesUrl}
             />
             <ButtonContainer>
                 <button onClick={flipCard}>JOGAR</button>
