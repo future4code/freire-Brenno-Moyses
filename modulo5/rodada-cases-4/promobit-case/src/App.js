@@ -1,8 +1,13 @@
+import Header from "./Components/Header/Header";
+import { GlobalStyle } from "./Global";
+import Home from "./Pages/Home/Home";
 
 function App() {
   return (
     <div>
-      APP
+      <Header/>
+      <Home/>
+      <GlobalStyle/>
     </div>
   );
 }
