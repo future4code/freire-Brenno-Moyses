@@ -14,3 +14,12 @@ export const FilterMenu = styled.div`
     margin-bottom: 120px;
     }
 `
+
+export const Films = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw;
+    width: 90vw;
+    margin: 20px auto;
+`
