@@ -24,6 +24,7 @@ const Details = () => {
             <DetailsHeader
             details = {details}
             />
+            <h1>Elenco original</h1>
         </div>
     )
 }

@@ -6,6 +6,8 @@ export const CardFilmContainer = styled.div`
     align-items: center;
     width: 176px;
     gap: 5px;
+
+    cursor: pointer;
 `
 
 export const ImageFilm = styled.img`

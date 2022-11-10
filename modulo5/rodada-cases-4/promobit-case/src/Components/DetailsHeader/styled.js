@@ -11,27 +11,32 @@ export const DetailsHeaderContainer = styled.div`
         width: 383px;
         height: 550px;
         object-fit: cover;
-        margin-left: 100px;
-        margin-top: 50px;
+        margin-left: 150px;
+        margin-top: 60px;
+        border-radius: 10px;
+
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 8px;
     }
 `
 
-export const DetailsContainer = styled.div`
+export const InfosContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    gap: 10px;
+    margin-left: 30px;
+    margin-top: 30px;
+`
 
-    h1{
-        font-size: 32px;
-    }
-
-    h2{
-        font-size: 20px;
-    }
+export const Sinopse = styled.div`
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 1px;
 
     p{
         width: 696px;
         height: 120px;
     }
 `
+
+
