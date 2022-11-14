@@ -1,0 +1,36 @@
+### Ping
+GET http://localhost:3003/ping
+
+### Signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Brenno",
+    "email": "Brenno@gmail.com",
+    "password": "Brenno123"
+}
+
+### Login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "astrodev@gmail.com",
+    "password": "bananinha"
+}
+
+###
+
+POST http://localhost:3003/show/create-show
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NDU1OTUwNiwiZXhwIjoxNjY0NjQ1OTA2fQ.xXEFTO_-Nh5XvKZKpLHw8Xw9uE7pZabQ6dXlt5kTg8c 
+Content-Type: application/json
+
+{
+    "band": "Slipknot",
+    "starts_at": "07/12/2022"
+}
+
+###
+
+GET http://localhost:3003/show/get-all-shows
